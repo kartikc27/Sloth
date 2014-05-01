@@ -1,0 +1,472 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		53BDD7EB1912F1EB00E12BC1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53BDD7EA1912F1EB00E12BC1 /* Foundation.framework */; };
+		53BDD7ED1912F1EB00E12BC1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53BDD7EC1912F1EB00E12BC1 /* CoreGraphics.framework */; };
+		53BDD7EF1912F1EB00E12BC1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53BDD7EE1912F1EB00E12BC1 /* UIKit.framework */; };
+		53BDD7F51912F1EB00E12BC1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 53BDD7F31912F1EB00E12BC1 /* InfoPlist.strings */; };
+		53BDD7F71912F1EB00E12BC1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 53BDD7F61912F1EB00E12BC1 /* main.m */; };
+		53BDD7FB1912F1EB00E12BC1 /* KSCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 53BDD7FA1912F1EB00E12BC1 /* KSCAppDelegate.m */; };
+		53BDD7FE1912F1EB00E12BC1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53BDD7FC1912F1EB00E12BC1 /* Main.storyboard */; };
+		53BDD8011912F1EB00E12BC1 /* KSCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53BDD8001912F1EB00E12BC1 /* KSCViewController.m */; };
+		53BDD8031912F1EB00E12BC1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53BDD8021912F1EB00E12BC1 /* Images.xcassets */; };
+		53BDD80A1912F1EB00E12BC1 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53BDD8091912F1EB00E12BC1 /* XCTest.framework */; };
+		53BDD80B1912F1EB00E12BC1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53BDD7EA1912F1EB00E12BC1 /* Foundation.framework */; };
+		53BDD80C1912F1EB00E12BC1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53BDD7EE1912F1EB00E12BC1 /* UIKit.framework */; };
+		53BDD8141912F1EB00E12BC1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 53BDD8121912F1EB00E12BC1 /* InfoPlist.strings */; };
+		53BDD8161912F1EB00E12BC1 /* Sloth2_0Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 53BDD8151912F1EB00E12BC1 /* Sloth2_0Tests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		53BDD80D1912F1EB00E12BC1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 53BDD7DF1912F1EB00E12BC1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 53BDD7E61912F1EB00E12BC1;
+			remoteInfo = Sloth2.0;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		53BDD7E71912F1EB00E12BC1 /* Sloth2.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sloth2.0.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		53BDD7EA1912F1EB00E12BC1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		53BDD7EC1912F1EB00E12BC1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		53BDD7EE1912F1EB00E12BC1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		53BDD7F21912F1EB00E12BC1 /* Sloth2.0-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Sloth2.0-Info.plist"; sourceTree = "<group>"; };
+		53BDD7F41912F1EB00E12BC1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		53BDD7F61912F1EB00E12BC1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		53BDD7F81912F1EB00E12BC1 /* Sloth2.0-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Sloth2.0-Prefix.pch"; sourceTree = "<group>"; };
+		53BDD7F91912F1EB00E12BC1 /* KSCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KSCAppDelegate.h; sourceTree = "<group>"; };
+		53BDD7FA1912F1EB00E12BC1 /* KSCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KSCAppDelegate.m; sourceTree = "<group>"; };
+		53BDD7FD1912F1EB00E12BC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		53BDD7FF1912F1EB00E12BC1 /* KSCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KSCViewController.h; sourceTree = "<group>"; };
+		53BDD8001912F1EB00E12BC1 /* KSCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KSCViewController.m; sourceTree = "<group>"; };
+		53BDD8021912F1EB00E12BC1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		53BDD8081912F1EB00E12BC1 /* Sloth2.0Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Sloth2.0Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		53BDD8091912F1EB00E12BC1 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		53BDD8111912F1EB00E12BC1 /* Sloth2.0Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Sloth2.0Tests-Info.plist"; sourceTree = "<group>"; };
+		53BDD8131912F1EB00E12BC1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		53BDD8151912F1EB00E12BC1 /* Sloth2_0Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Sloth2_0Tests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		53BDD7E41912F1EB00E12BC1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53BDD7ED1912F1EB00E12BC1 /* CoreGraphics.framework in Frameworks */,
+				53BDD7EF1912F1EB00E12BC1 /* UIKit.framework in Frameworks */,
+				53BDD7EB1912F1EB00E12BC1 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53BDD8051912F1EB00E12BC1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53BDD80A1912F1EB00E12BC1 /* XCTest.framework in Frameworks */,
+				53BDD80C1912F1EB00E12BC1 /* UIKit.framework in Frameworks */,
+				53BDD80B1912F1EB00E12BC1 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		53BDD7DE1912F1EB00E12BC1 = {
+			isa = PBXGroup;
+			children = (
+				53BDD7F01912F1EB00E12BC1 /* Sloth2.0 */,
+				53BDD80F1912F1EB00E12BC1 /* Sloth2.0Tests */,
+				53BDD7E91912F1EB00E12BC1 /* Frameworks */,
+				53BDD7E81912F1EB00E12BC1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		53BDD7E81912F1EB00E12BC1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				53BDD7E71912F1EB00E12BC1 /* Sloth2.0.app */,
+				53BDD8081912F1EB00E12BC1 /* Sloth2.0Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		53BDD7E91912F1EB00E12BC1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				53BDD7EA1912F1EB00E12BC1 /* Foundation.framework */,
+				53BDD7EC1912F1EB00E12BC1 /* CoreGraphics.framework */,
+				53BDD7EE1912F1EB00E12BC1 /* UIKit.framework */,
+				53BDD8091912F1EB00E12BC1 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		53BDD7F01912F1EB00E12BC1 /* Sloth2.0 */ = {
+			isa = PBXGroup;
+			children = (
+				53BDD7F91912F1EB00E12BC1 /* KSCAppDelegate.h */,
+				53BDD7FA1912F1EB00E12BC1 /* KSCAppDelegate.m */,
+				53BDD7FC1912F1EB00E12BC1 /* Main.storyboard */,
+				53BDD7FF1912F1EB00E12BC1 /* KSCViewController.h */,
+				53BDD8001912F1EB00E12BC1 /* KSCViewController.m */,
+				53BDD8021912F1EB00E12BC1 /* Images.xcassets */,
+				53BDD7F11912F1EB00E12BC1 /* Supporting Files */,
+			);
+			path = Sloth2.0;
+			sourceTree = "<group>";
+		};
+		53BDD7F11912F1EB00E12BC1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				53BDD7F21912F1EB00E12BC1 /* Sloth2.0-Info.plist */,
+				53BDD7F31912F1EB00E12BC1 /* InfoPlist.strings */,
+				53BDD7F61912F1EB00E12BC1 /* main.m */,
+				53BDD7F81912F1EB00E12BC1 /* Sloth2.0-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		53BDD80F1912F1EB00E12BC1 /* Sloth2.0Tests */ = {
+			isa = PBXGroup;
+			children = (
+				53BDD8151912F1EB00E12BC1 /* Sloth2_0Tests.m */,
+				53BDD8101912F1EB00E12BC1 /* Supporting Files */,
+			);
+			path = Sloth2.0Tests;
+			sourceTree = "<group>";
+		};
+		53BDD8101912F1EB00E12BC1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				53BDD8111912F1EB00E12BC1 /* Sloth2.0Tests-Info.plist */,
+				53BDD8121912F1EB00E12BC1 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		53BDD7E61912F1EB00E12BC1 /* Sloth2.0 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 53BDD8191912F1EB00E12BC1 /* Build configuration list for PBXNativeTarget "Sloth2.0" */;
+			buildPhases = (
+				53BDD7E31912F1EB00E12BC1 /* Sources */,
+				53BDD7E41912F1EB00E12BC1 /* Frameworks */,
+				53BDD7E51912F1EB00E12BC1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Sloth2.0;
+			productName = Sloth2.0;
+			productReference = 53BDD7E71912F1EB00E12BC1 /* Sloth2.0.app */;
+			productType = "com.apple.product-type.application";
+		};
+		53BDD8071912F1EB00E12BC1 /* Sloth2.0Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 53BDD81C1912F1EB00E12BC1 /* Build configuration list for PBXNativeTarget "Sloth2.0Tests" */;
+			buildPhases = (
+				53BDD8041912F1EB00E12BC1 /* Sources */,
+				53BDD8051912F1EB00E12BC1 /* Frameworks */,
+				53BDD8061912F1EB00E12BC1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				53BDD80E1912F1EB00E12BC1 /* PBXTargetDependency */,
+			);
+			name = Sloth2.0Tests;
+			productName = Sloth2.0Tests;
+			productReference = 53BDD8081912F1EB00E12BC1 /* Sloth2.0Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		53BDD7DF1912F1EB00E12BC1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = KSC;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = KSC;
+				TargetAttributes = {
+					53BDD8071912F1EB00E12BC1 = {
+						TestTargetID = 53BDD7E61912F1EB00E12BC1;
+					};
+				};
+			};
+			buildConfigurationList = 53BDD7E21912F1EB00E12BC1 /* Build configuration list for PBXProject "Sloth2.0" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 53BDD7DE1912F1EB00E12BC1;
+			productRefGroup = 53BDD7E81912F1EB00E12BC1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				53BDD7E61912F1EB00E12BC1 /* Sloth2.0 */,
+				53BDD8071912F1EB00E12BC1 /* Sloth2.0Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		53BDD7E51912F1EB00E12BC1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53BDD8031912F1EB00E12BC1 /* Images.xcassets in Resources */,
+				53BDD7F51912F1EB00E12BC1 /* InfoPlist.strings in Resources */,
+				53BDD7FE1912F1EB00E12BC1 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53BDD8061912F1EB00E12BC1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53BDD8141912F1EB00E12BC1 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		53BDD7E31912F1EB00E12BC1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53BDD7FB1912F1EB00E12BC1 /* KSCAppDelegate.m in Sources */,
+				53BDD8011912F1EB00E12BC1 /* KSCViewController.m in Sources */,
+				53BDD7F71912F1EB00E12BC1 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53BDD8041912F1EB00E12BC1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53BDD8161912F1EB00E12BC1 /* Sloth2_0Tests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		53BDD80E1912F1EB00E12BC1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 53BDD7E61912F1EB00E12BC1 /* Sloth2.0 */;
+			targetProxy = 53BDD80D1912F1EB00E12BC1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		53BDD7F31912F1EB00E12BC1 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				53BDD7F41912F1EB00E12BC1 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		53BDD7FC1912F1EB00E12BC1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				53BDD7FD1912F1EB00E12BC1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		53BDD8121912F1EB00E12BC1 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				53BDD8131912F1EB00E12BC1 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		53BDD8171912F1EB00E12BC1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		53BDD8181912F1EB00E12BC1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		53BDD81A1912F1EB00E12BC1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Sloth2.0/Sloth2.0-Prefix.pch";
+				INFOPLIST_FILE = "Sloth2.0/Sloth2.0-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		53BDD81B1912F1EB00E12BC1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Sloth2.0/Sloth2.0-Prefix.pch";
+				INFOPLIST_FILE = "Sloth2.0/Sloth2.0-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		53BDD81D1912F1EB00E12BC1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Sloth2.0.app/Sloth2.0";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Sloth2.0/Sloth2.0-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Sloth2.0Tests/Sloth2.0Tests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		53BDD81E1912F1EB00E12BC1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Sloth2.0.app/Sloth2.0";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Sloth2.0/Sloth2.0-Prefix.pch";
+				INFOPLIST_FILE = "Sloth2.0Tests/Sloth2.0Tests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		53BDD7E21912F1EB00E12BC1 /* Build configuration list for PBXProject "Sloth2.0" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				53BDD8171912F1EB00E12BC1 /* Debug */,
+				53BDD8181912F1EB00E12BC1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		53BDD8191912F1EB00E12BC1 /* Build configuration list for PBXNativeTarget "Sloth2.0" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				53BDD81A1912F1EB00E12BC1 /* Debug */,
+				53BDD81B1912F1EB00E12BC1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		53BDD81C1912F1EB00E12BC1 /* Build configuration list for PBXNativeTarget "Sloth2.0Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				53BDD81D1912F1EB00E12BC1 /* Debug */,
+				53BDD81E1912F1EB00E12BC1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 53BDD7DF1912F1EB00E12BC1 /* Project object */;
+}
