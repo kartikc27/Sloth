@@ -28,6 +28,7 @@
 		53E4FBC419164E8D00CA9971 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53E4FBC319164E8D00CA9971 /* MapKit.framework */; };
 		53E4FBC619164E9600CA9971 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53E4FBC519164E9600CA9971 /* CoreLocation.framework */; };
 		53E4FBC91916DD8300CA9971 /* KSCMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E4FBC81916DD8300CA9971 /* KSCMapViewController.m */; };
+		53E4FBCC1917743A00CA9971 /* KSCHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E4FBCB1917743A00CA9971 /* KSCHomeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,8 @@
 		53E4FBC519164E9600CA9971 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		53E4FBC71916DD8300CA9971 /* KSCMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSCMapViewController.h; sourceTree = "<group>"; };
 		53E4FBC81916DD8300CA9971 /* KSCMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSCMapViewController.m; sourceTree = "<group>"; };
+		53E4FBCA1917743A00CA9971 /* KSCHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSCHomeViewController.h; sourceTree = "<group>"; };
+		53E4FBCB1917743A00CA9971 /* KSCHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSCHomeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +150,8 @@
 				53BDD832191628CF00E12BC1 /* InputClassesTableViewController.m */,
 				53E4FBC71916DD8300CA9971 /* KSCMapViewController.h */,
 				53E4FBC81916DD8300CA9971 /* KSCMapViewController.m */,
+				53E4FBCA1917743A00CA9971 /* KSCHomeViewController.h */,
+				53E4FBCB1917743A00CA9971 /* KSCHomeViewController.m */,
 				53BDD7F91912F1EB00E12BC1 /* KSCAppDelegate.h */,
 				53BDD7FA1912F1EB00E12BC1 /* KSCAppDelegate.m */,
 				53BDD7FC1912F1EB00E12BC1 /* Main.storyboard */,
@@ -284,6 +289,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				53BDD8241913995600E12BC1 /* KSCAddClassesTableViewController.m in Sources */,
+				53E4FBCC1917743A00CA9971 /* KSCHomeViewController.m in Sources */,
 				53BDD7FB1912F1EB00E12BC1 /* KSCAppDelegate.m in Sources */,
 				53BDD8211912F4B500E12BC1 /* KSCSetUpViewController.m in Sources */,
 				53BDD82A1914E3F100E12BC1 /* KSCClass.m in Sources */,
