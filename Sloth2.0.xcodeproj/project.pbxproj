@@ -67,14 +67,14 @@
 		53BDD8291914E3F100E12BC1 /* KSCClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSCClass.m; sourceTree = "<group>"; };
 		53BDD82B1915AB1000E12BC1 /* KSCClassesModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSCClassesModel.h; sourceTree = "<group>"; };
 		53BDD82C1915AB1000E12BC1 /* KSCClassesModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSCClassesModel.m; sourceTree = "<group>"; };
-		53BDD831191628CF00E12BC1 /* InputClassesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InputClassesTableViewController.h; path = ../InputClassesTableViewController.h; sourceTree = "<group>"; };
-		53BDD832191628CF00E12BC1 /* InputClassesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InputClassesTableViewController.m; path = ../InputClassesTableViewController.m; sourceTree = "<group>"; };
+		53BDD832191628CF00E12BC1 /* InputClassesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InputClassesTableViewController.m; path = Sloth2.0/InputClassesTableViewController.m; sourceTree = SOURCE_ROOT; };
 		53E4FBC319164E8D00CA9971 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		53E4FBC519164E9600CA9971 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		53E4FBC71916DD8300CA9971 /* KSCMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSCMapViewController.h; sourceTree = "<group>"; };
 		53E4FBC81916DD8300CA9971 /* KSCMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSCMapViewController.m; sourceTree = "<group>"; };
 		53E4FBCA1917743A00CA9971 /* KSCHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSCHomeViewController.h; sourceTree = "<group>"; };
 		53E4FBCB1917743A00CA9971 /* KSCHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSCHomeViewController.m; sourceTree = "<group>"; };
+		53E4FBCD19178AAC00CA9971 /* InputClassesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InputClassesTableViewController.h; path = Sloth2.0/InputClassesTableViewController.h; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,7 +146,7 @@
 				53BDD8201912F4B500E12BC1 /* KSCSetUpViewController.m */,
 				53BDD8221913995600E12BC1 /* KSCAddClassesTableViewController.h */,
 				53BDD8231913995600E12BC1 /* KSCAddClassesTableViewController.m */,
-				53BDD831191628CF00E12BC1 /* InputClassesTableViewController.h */,
+				53E4FBCD19178AAC00CA9971 /* InputClassesTableViewController.h */,
 				53BDD832191628CF00E12BC1 /* InputClassesTableViewController.m */,
 				53E4FBC71916DD8300CA9971 /* KSCMapViewController.h */,
 				53E4FBC81916DD8300CA9971 /* KSCMapViewController.m */,
