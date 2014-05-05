@@ -10,9 +10,11 @@
 #import "KSCClassesModel.h"
 
 
+
 @interface KSCHomeViewController ()
 @property (strong) NSMutableArray* todaysClasses;
 @property (strong,nonatomic) KSCClassesModel *model;
+@property (weak, nonatomic) IBOutlet UITableView *todaysClassesTable;
 
 @end
 
@@ -95,11 +97,50 @@
 
 }
 
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    // Return the number of sections.
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    // Return the number of rows in the section.
+    return [self.todaysClasses count];
+}
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *simpleTableIdentifier = @"ClassCell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:simpleTableIdentifier];
+    }
+    
+    
+    
+    
+    cell.textLabel.text = [[_todaysClasses objectAtIndex:[indexPath row]] sectionName];
+    
+    NSDate *startTime = [[_todaysClasses objectAtIndex:[indexPath row]] startTime];
+    NSDateFormatter *startTimeFormat = [[NSDateFormatter alloc] init];
+    [startTimeFormat setDateFormat:@"hh:mm a"];
+    cell.detailTextLabel.text = [startTimeFormat stringFromDate:startTime];
+    
+    return cell;
+}
+
 
 /*
 #pragma mark - Navigation
