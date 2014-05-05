@@ -28,9 +28,6 @@
     return [self.classes count];
 }
 
-- (NSString *) answerAtIndex: (NSUInteger) index {
-    return [self.classes objectAtIndex:index];
-}
 
 - (void) removeClassAtIndex: (NSUInteger) index {
     NSUInteger numOfClasses = [self numberOfClasses];

@@ -13,6 +13,7 @@
 
 @property (strong,nonatomic) KSCClassesModel *model;
 
+@property (weak, nonatomic) IBOutlet UITableView *scheduleTable;
 @end
 
 @implementation KSCAddClassesTableViewController
@@ -22,14 +23,27 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.model = [KSCClassesModel sharedModel];
+
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [self.scheduleTable reloadData];
+    NSLog(@"TESTING %d", _model.numberOfClasses);
     
-    self.model = [[KSCClassesModel alloc] init];
+    if (_model.numberOfClasses > 0) {
+     NSLog (@"%@", [self.model classAtIndex:0].sectionName);
+     NSLog (@"%@", [self.model classAtIndex:0].daysOfClass);
+     NSLog (@"%@", [self.model classAtIndex:0].startTime);
+     NSLog (@"%@", [self.model classAtIndex:0].endTime);
+     NSLog (@"%f", [self.model classAtIndex:0].xLocation);
+     NSLog (@"%f", [self.model classAtIndex:0].yLocation);
+    }
+    
+    //self.model = [[KSCClassesModel alloc] init];
 }
 
 - (void)didReceiveMemoryWarning
@@ -55,28 +69,18 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    //UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    static NSString *simpleTableIdentifier = @"ScheduleCell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
     
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] init];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
     
-    /*NSMutableString *labelString = [[NSMutableString alloc] init];
-    [labelString appendString:[[[KSCClassesModel getSections] objectAtIndex:indexPath.row] sectionName]];
-    [labelString appendString: @": "];
-    [labelString appendString:[[[KSCClassesModel getSections] objectAtIndex:indexPath.row] startTime]];
-    [labelString appendString: @" - "];
-    [labelString appendString:[[[SectionModel getSections] objectAtIndex:indexPath.row] endTime]];
-    cell.textLabel.text = labelString;*/
-    //  cell.detailTextLabel.text = [[[SectionModel getSections] objectAtIndex:indexPath.row] startTime] ,"asdf", [[[SectionModel getSections] objectAtIndex:indexPath.row] startTime];
-    
-    
-    // Configure the cell...
-    
+    cell.textLabel.text = [self.model classAtIndex:[indexPath row]].sectionName;
     return cell;
 }
+
 
 - (void) removeClassAtIndex: (NSUInteger) index {
     NSUInteger numOfClasses = [self.model numberOfClasses];

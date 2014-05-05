@@ -10,6 +10,7 @@
 #import "KSCMapViewController.h"
 #import "KSCClass.h"
 #import "KSCClassesModel.h"
+#import "KSCAddClassesTableViewController.h"
 
 @interface InputClassesTableViewController ()
 
@@ -26,6 +27,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *classNameTF;
 @property (weak, nonatomic) IBOutlet UILabel *startTimeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *endTimeLabel;
+@property (weak, nonatomic) IBOutlet UIButton *setLocationButton;
 
 @property (strong,nonatomic) KSCClassesModel *model;
 
@@ -65,7 +67,20 @@ double yLoc;
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     _endPickerCell.alpha = 0.0;
+    
+    NSDate *startTime = _startPickerCell.date;
+    NSDateFormatter *startTimeFormat = [[NSDateFormatter alloc] init];
+    [startTimeFormat setDateFormat:@"hh:mm a"];
+    _startTimeLabel.textAlignment=NSTextAlignmentLeft;
+    _startTimeLabel.text = [startTimeFormat stringFromDate:startTime];
+    
+    NSDate *endTime = _endPickerCell.date;
+    NSDateFormatter *endTimeFormat = [[NSDateFormatter alloc] init];
+    [endTimeFormat setDateFormat:@"hh:mm a"];
+    _endTimeLabel.textAlignment=NSTextAlignmentLeft;
+    _endTimeLabel.text = [endTimeFormat stringFromDate:endTime];
 }
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -81,8 +96,7 @@ double yLoc;
     NSDate *startTime = _startPickerCell.date;
     NSDateFormatter *startTimeFormat = [[NSDateFormatter alloc] init];
     [startTimeFormat setDateFormat:@"hh:mm a"];
-    _startTimeLabel.textAlignment=NSTextAlignmentLeft
-    ;
+    _startTimeLabel.textAlignment=NSTextAlignmentLeft;
     _startTimeLabel.text = [startTimeFormat stringFromDate:startTime];
 }
 
@@ -266,20 +280,40 @@ double yLoc;
     yLoc = [KSCMapViewController coordinateOfAnnotation].longitude;
     
     
-    /*NSLog (@"%@", className);
+    NSLog (@"%@", className);
     NSLog (@"%@", days);
     NSLog (@"%@", startTime);
     NSLog (@"%@", endTime);
     NSLog (@"%f", xLoc);
-    NSLog (@"%f", yLoc);*/
+    NSLog (@"%f", yLoc);
     
-    NSInteger classIndex = [self.model numberOfClasses];
-    [self.model insertClass: [[KSCClass alloc] initWithSectionName:className andStartTime:startTime andxLoc:xLoc andyLoc:yLoc andEndTime:endTime andDays:days] atIndex:0];
+    if ((className.length == 0) || ([startTime isEqual:endTime]) || (xLoc == 0) || (yLoc == 0) || ([days isEqual:@"00000"])) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error!"
+                                                        message:@"Please complete all the fields"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+    }
+    else {
+    
+        NSInteger classIndex = [self.model numberOfClasses];
+        [self.model insertClass: [[KSCClass alloc] initWithSectionName:className andStartTime:startTime andxLoc:xLoc andyLoc:yLoc andEndTime:endTime andDays:days] atIndex:classIndex];
+    
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        UINavigationController *viewController = (UINavigationController *)[storyboard  instantiateViewControllerWithIdentifier:@"ClassesNavController"];
+        [self presentViewController:viewController animated:YES completion:nil];
+    }
     
     //NSLog (@"%d", _model.numberOfClasses);
     
 }
 
+- (IBAction)cancelButtonTapped:(id)sender {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UINavigationController *viewController = (UINavigationController *)[storyboard  instantiateViewControllerWithIdentifier:@"ClassesNavController"];
+    [self presentViewController:viewController animated:YES completion:nil];
+}
 
 
 
