@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface KSCHomeViewController : UIViewController
+@interface KSCHomeViewController : UIViewController <UITableViewDelegate>
 
 @end

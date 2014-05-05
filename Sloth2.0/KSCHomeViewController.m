@@ -15,6 +15,7 @@
 @property (strong) NSMutableArray* todaysClasses;
 @property (strong,nonatomic) KSCClassesModel *model;
 @property (weak, nonatomic) IBOutlet UITableView *todaysClassesTable;
+@property (weak, nonatomic) IBOutlet UIButton *checkInButton;
 
 @end
 
@@ -139,6 +140,26 @@
     cell.detailTextLabel.text = [startTimeFormat stringFromDate:startTime];
     
     return cell;
+}
+
+
+
+-(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if ([indexPath row] == 0) {
+        NSLog(@"TESTING");
+        
+        NSDate* now = [NSDate date];
+        NSTimeInterval secondsIn15Minutes = 60*15;
+        NSDate *startTime = [[_todaysClasses objectAtIndex:0] startTime];
+        NSTimeInterval timeFromClass = [now timeIntervalSinceDate:startTime];
+        NSTimeInterval secondsIn15Minutes2 = -1*60*15;
+
+        if ((timeFromClass < secondsIn15Minutes) && (timeFromClass > secondsIn15Minutes2))  {
+            self.checkInButton.layer.backgroundColor = [[UIColor colorWithRed:0 green:0.478 blue:1 alpha:1] CGColor];
+        }
+    }
+    
 }
 
 
