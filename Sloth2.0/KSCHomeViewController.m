@@ -32,7 +32,52 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    NSDate *today = [NSDate date];
+    NSDateFormatter *myFormatter = [[NSDateFormatter alloc] init];
+    [myFormatter setDateFormat:@"EEEE"]; // day, like "Saturday"
+    [myFormatter setDateFormat:@"c"]; // day number, like 7 for saturday
+    NSString *dayOfWeek = [myFormatter stringFromDate:today];
+    NSLog(@"Today is: %@", dayOfWeek);
+    
+    
     self.model = [KSCClassesModel sharedModel];
+    
+    //NSString * firstLetter = [_model. substringToIndex:1];
+    
+    for (int i = 0; i < _model.numberOfClasses; i++) {
+        if ([_model classAtIndex:i]) {
+            NSString* firstDay = [[_model classAtIndex:i].daysOfClass substringToIndex:1];
+            NSString* secondDay = [[_model classAtIndex:i].daysOfClass substringWithRange:NSMakeRange(1, 1)];
+            NSString* thirdDay = [[_model classAtIndex:i].daysOfClass substringWithRange:NSMakeRange(2, 1)];
+            NSString* fourthDay = [[_model classAtIndex:i].daysOfClass substringWithRange:NSMakeRange(3, 1)];
+            NSString* fifthDay = [[_model classAtIndex:i].daysOfClass substringWithRange:NSMakeRange(4, 1)];
+            
+            /*NSLog(@"%@", firstDay);
+            NSLog(@"%@", secondDay);
+            NSLog(@"%@", thirdDay);
+            NSLog(@"%@", fourthDay);
+            NSLog(@"%@", fifthDay);*/
+            
+            if ([dayOfWeek isEqualToString:@"2"] && [firstDay isEqualToString:@"1"]) {
+                NSLog(@"Monday Class");
+            }
+            else if ([dayOfWeek isEqualToString:@"3"] && [secondDay isEqualToString:@"1"]) {
+                NSLog(@"Tuesday Class");
+            }
+            else if ([dayOfWeek isEqualToString:@"4"] && [thirdDay isEqualToString:@"1"]) {
+                NSLog(@"Wednesday Class");
+            }
+            else if ([dayOfWeek isEqualToString:@"5"] && [fourthDay isEqualToString:@"1"]) {
+                NSLog(@"Thursday Class");
+            }
+            else if ([dayOfWeek isEqualToString:@"6"] && [fifthDay isEqualToString:@"1"]) {
+                NSLog(@"Friday Class");
+            }
+
+        }
+    }
+   
+    
 
 }
 

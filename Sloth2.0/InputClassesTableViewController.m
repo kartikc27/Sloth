@@ -276,6 +276,24 @@ double yLoc;
         }
     }
     
+    if (monSelected) {
+        monSelected = NO;
+    }
+    if (tueSelected) {
+        tueSelected = NO;
+    }
+    if (wedSelected) {
+        wedSelected = NO;
+    }
+    if (thuSelected) {
+        thuSelected = NO;
+    }
+    if (friSelected) {
+        friSelected = NO;
+    }
+    
+    
+    
     xLoc = [KSCMapViewController coordinateOfAnnotation].latitude;
     yLoc = [KSCMapViewController coordinateOfAnnotation].longitude;
     
