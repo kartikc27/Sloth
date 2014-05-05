@@ -1,5 +1,5 @@
 //
-//  KSCViewController.h
+//  KSCSetUpViewController.h
 //  Sloth2.0
 //
 //  Created by Kartik Chillakanti on 5/1/14.
@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface KSCViewController : UIViewController
+
+@interface KSCSetUpViewController : UIViewController 
+
 
 @end

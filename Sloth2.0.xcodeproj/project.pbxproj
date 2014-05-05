@@ -14,13 +14,20 @@
 		53BDD7F71912F1EB00E12BC1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 53BDD7F61912F1EB00E12BC1 /* main.m */; };
 		53BDD7FB1912F1EB00E12BC1 /* KSCAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 53BDD7FA1912F1EB00E12BC1 /* KSCAppDelegate.m */; };
 		53BDD7FE1912F1EB00E12BC1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53BDD7FC1912F1EB00E12BC1 /* Main.storyboard */; };
-		53BDD8011912F1EB00E12BC1 /* KSCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53BDD8001912F1EB00E12BC1 /* KSCViewController.m */; };
 		53BDD8031912F1EB00E12BC1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53BDD8021912F1EB00E12BC1 /* Images.xcassets */; };
 		53BDD80A1912F1EB00E12BC1 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53BDD8091912F1EB00E12BC1 /* XCTest.framework */; };
 		53BDD80B1912F1EB00E12BC1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53BDD7EA1912F1EB00E12BC1 /* Foundation.framework */; };
 		53BDD80C1912F1EB00E12BC1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53BDD7EE1912F1EB00E12BC1 /* UIKit.framework */; };
 		53BDD8141912F1EB00E12BC1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 53BDD8121912F1EB00E12BC1 /* InfoPlist.strings */; };
 		53BDD8161912F1EB00E12BC1 /* Sloth2_0Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 53BDD8151912F1EB00E12BC1 /* Sloth2_0Tests.m */; };
+		53BDD8211912F4B500E12BC1 /* KSCSetUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53BDD8201912F4B500E12BC1 /* KSCSetUpViewController.m */; };
+		53BDD8241913995600E12BC1 /* KSCAddClassesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53BDD8231913995600E12BC1 /* KSCAddClassesTableViewController.m */; };
+		53BDD82A1914E3F100E12BC1 /* KSCClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 53BDD8291914E3F100E12BC1 /* KSCClass.m */; };
+		53BDD82D1915AB1000E12BC1 /* KSCClassesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 53BDD82C1915AB1000E12BC1 /* KSCClassesModel.m */; };
+		53BDD833191628CF00E12BC1 /* InputClassesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53BDD832191628CF00E12BC1 /* InputClassesTableViewController.m */; };
+		53E4FBC419164E8D00CA9971 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53E4FBC319164E8D00CA9971 /* MapKit.framework */; };
+		53E4FBC619164E9600CA9971 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53E4FBC519164E9600CA9971 /* CoreLocation.framework */; };
+		53E4FBC91916DD8300CA9971 /* KSCMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E4FBC81916DD8300CA9971 /* KSCMapViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,14 +52,26 @@
 		53BDD7F91912F1EB00E12BC1 /* KSCAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KSCAppDelegate.h; sourceTree = "<group>"; };
 		53BDD7FA1912F1EB00E12BC1 /* KSCAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KSCAppDelegate.m; sourceTree = "<group>"; };
 		53BDD7FD1912F1EB00E12BC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		53BDD7FF1912F1EB00E12BC1 /* KSCViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KSCViewController.h; sourceTree = "<group>"; };
-		53BDD8001912F1EB00E12BC1 /* KSCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KSCViewController.m; sourceTree = "<group>"; };
 		53BDD8021912F1EB00E12BC1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		53BDD8081912F1EB00E12BC1 /* Sloth2.0Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Sloth2.0Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		53BDD8091912F1EB00E12BC1 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		53BDD8111912F1EB00E12BC1 /* Sloth2.0Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Sloth2.0Tests-Info.plist"; sourceTree = "<group>"; };
 		53BDD8131912F1EB00E12BC1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		53BDD8151912F1EB00E12BC1 /* Sloth2_0Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Sloth2_0Tests.m; sourceTree = "<group>"; };
+		53BDD81F1912F4B500E12BC1 /* KSCSetUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSCSetUpViewController.h; sourceTree = "<group>"; };
+		53BDD8201912F4B500E12BC1 /* KSCSetUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSCSetUpViewController.m; sourceTree = "<group>"; };
+		53BDD8221913995600E12BC1 /* KSCAddClassesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSCAddClassesTableViewController.h; sourceTree = "<group>"; };
+		53BDD8231913995600E12BC1 /* KSCAddClassesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSCAddClassesTableViewController.m; sourceTree = "<group>"; };
+		53BDD8281914E3F100E12BC1 /* KSCClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSCClass.h; sourceTree = "<group>"; };
+		53BDD8291914E3F100E12BC1 /* KSCClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSCClass.m; sourceTree = "<group>"; };
+		53BDD82B1915AB1000E12BC1 /* KSCClassesModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSCClassesModel.h; sourceTree = "<group>"; };
+		53BDD82C1915AB1000E12BC1 /* KSCClassesModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSCClassesModel.m; sourceTree = "<group>"; };
+		53BDD831191628CF00E12BC1 /* InputClassesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InputClassesTableViewController.h; path = ../InputClassesTableViewController.h; sourceTree = "<group>"; };
+		53BDD832191628CF00E12BC1 /* InputClassesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InputClassesTableViewController.m; path = ../InputClassesTableViewController.m; sourceTree = "<group>"; };
+		53E4FBC319164E8D00CA9971 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		53E4FBC519164E9600CA9971 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		53E4FBC71916DD8300CA9971 /* KSCMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSCMapViewController.h; sourceTree = "<group>"; };
+		53E4FBC81916DD8300CA9971 /* KSCMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSCMapViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +79,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53E4FBC619164E9600CA9971 /* CoreLocation.framework in Frameworks */,
+				53E4FBC419164E8D00CA9971 /* MapKit.framework in Frameworks */,
 				53BDD7ED1912F1EB00E12BC1 /* CoreGraphics.framework in Frameworks */,
 				53BDD7EF1912F1EB00E12BC1 /* UIKit.framework in Frameworks */,
 				53BDD7EB1912F1EB00E12BC1 /* Foundation.framework in Frameworks */,
@@ -101,6 +122,8 @@
 		53BDD7E91912F1EB00E12BC1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				53E4FBC519164E9600CA9971 /* CoreLocation.framework */,
+				53E4FBC319164E8D00CA9971 /* MapKit.framework */,
 				53BDD7EA1912F1EB00E12BC1 /* Foundation.framework */,
 				53BDD7EC1912F1EB00E12BC1 /* CoreGraphics.framework */,
 				53BDD7EE1912F1EB00E12BC1 /* UIKit.framework */,
@@ -112,11 +135,21 @@
 		53BDD7F01912F1EB00E12BC1 /* Sloth2.0 */ = {
 			isa = PBXGroup;
 			children = (
+				53BDD831191628CF00E12BC1 /* InputClassesTableViewController.h */,
+				53BDD832191628CF00E12BC1 /* InputClassesTableViewController.m */,
+				53BDD81F1912F4B500E12BC1 /* KSCSetUpViewController.h */,
+				53BDD8201912F4B500E12BC1 /* KSCSetUpViewController.m */,
 				53BDD7F91912F1EB00E12BC1 /* KSCAppDelegate.h */,
 				53BDD7FA1912F1EB00E12BC1 /* KSCAppDelegate.m */,
 				53BDD7FC1912F1EB00E12BC1 /* Main.storyboard */,
-				53BDD7FF1912F1EB00E12BC1 /* KSCViewController.h */,
-				53BDD8001912F1EB00E12BC1 /* KSCViewController.m */,
+				53E4FBC71916DD8300CA9971 /* KSCMapViewController.h */,
+				53E4FBC81916DD8300CA9971 /* KSCMapViewController.m */,
+				53BDD8221913995600E12BC1 /* KSCAddClassesTableViewController.h */,
+				53BDD8231913995600E12BC1 /* KSCAddClassesTableViewController.m */,
+				53BDD8281914E3F100E12BC1 /* KSCClass.h */,
+				53BDD8291914E3F100E12BC1 /* KSCClass.m */,
+				53BDD82B1915AB1000E12BC1 /* KSCClassesModel.h */,
+				53BDD82C1915AB1000E12BC1 /* KSCClassesModel.m */,
 				53BDD8021912F1EB00E12BC1 /* Images.xcassets */,
 				53BDD7F11912F1EB00E12BC1 /* Supporting Files */,
 			);
@@ -250,9 +283,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53BDD8241913995600E12BC1 /* KSCAddClassesTableViewController.m in Sources */,
 				53BDD7FB1912F1EB00E12BC1 /* KSCAppDelegate.m in Sources */,
-				53BDD8011912F1EB00E12BC1 /* KSCViewController.m in Sources */,
+				53BDD8211912F4B500E12BC1 /* KSCSetUpViewController.m in Sources */,
+				53BDD82A1914E3F100E12BC1 /* KSCClass.m in Sources */,
+				53BDD833191628CF00E12BC1 /* InputClassesTableViewController.m in Sources */,
+				53BDD82D1915AB1000E12BC1 /* KSCClassesModel.m in Sources */,
 				53BDD7F71912F1EB00E12BC1 /* main.m in Sources */,
+				53E4FBC91916DD8300CA9971 /* KSCMapViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,6 +495,7 @@
 				53BDD81B1912F1EB00E12BC1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		53BDD81C1912F1EB00E12BC1 /* Build configuration list for PBXNativeTarget "Sloth2.0Tests" */ = {
 			isa = XCConfigurationList;
@@ -465,6 +504,7 @@
 				53BDD81E1912F1EB00E12BC1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
