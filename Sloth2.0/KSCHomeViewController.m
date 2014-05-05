@@ -11,7 +11,7 @@
 
 
 @interface KSCHomeViewController ()
-@property (strong, nonatomic) NSMutableArray* todaysClasses;
+@property (strong) NSMutableArray* todaysClasses;
 @property (strong,nonatomic) KSCClassesModel *model;
 
 @end
@@ -22,16 +22,17 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
-    }
+           }
     return self;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+        
     
+    _todaysClasses = [[NSMutableArray alloc] init];
+
     NSDate *today = [NSDate date];
     NSDateFormatter *myFormatter = [[NSDateFormatter alloc] init];
     [myFormatter setDateFormat:@"EEEE"]; // day, like "Saturday"
@@ -60,21 +61,34 @@
             
             if ([dayOfWeek isEqualToString:@"2"] && [firstDay isEqualToString:@"1"]) {
                 NSLog(@"Monday Class");
-            }
+                [_todaysClasses addObject:[_model classAtIndex:i]];
+                
+                           }
             else if ([dayOfWeek isEqualToString:@"3"] && [secondDay isEqualToString:@"1"]) {
                 NSLog(@"Tuesday Class");
+                [_todaysClasses insertObject:[_model classAtIndex:i] atIndex:[_todaysClasses count]];
             }
             else if ([dayOfWeek isEqualToString:@"4"] && [thirdDay isEqualToString:@"1"]) {
                 NSLog(@"Wednesday Class");
+                [_todaysClasses insertObject:[_model classAtIndex:i] atIndex:[_todaysClasses count]];
             }
             else if ([dayOfWeek isEqualToString:@"5"] && [fourthDay isEqualToString:@"1"]) {
                 NSLog(@"Thursday Class");
+                [_todaysClasses insertObject:[_model classAtIndex:i] atIndex:[_todaysClasses count]];
             }
             else if ([dayOfWeek isEqualToString:@"6"] && [fifthDay isEqualToString:@"1"]) {
                 NSLog(@"Friday Class");
+                [_todaysClasses insertObject:[_model classAtIndex:i] atIndex:[_todaysClasses count]];
             }
 
         }
+
+    }
+    NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"startTime" ascending:YES];
+    [_todaysClasses sortUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+    
+    for (int j = 0; j < _todaysClasses.count; j++) {
+        NSLog(@"%@", [[_todaysClasses objectAtIndex:j] sectionName]);
     }
    
     
