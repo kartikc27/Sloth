@@ -11,6 +11,7 @@
 
 
 
+
 @interface KSCHomeViewController ()
 @property (strong) NSMutableArray* todaysClasses;
 @property (strong,nonatomic) KSCClassesModel *model;
@@ -35,7 +36,7 @@
         
     
     _todaysClasses = [[NSMutableArray alloc] init];
-
+    [self.checkInButton setEnabled:NO];
     NSDate *today = [NSDate date];
     NSDateFormatter *myFormatter = [[NSDateFormatter alloc] init];
     [myFormatter setDateFormat:@"EEEE"]; // day, like "Saturday"
@@ -150,17 +151,129 @@
         NSLog(@"TESTING");
         
         NSDate* now = [NSDate date];
-        NSTimeInterval secondsIn15Minutes = 60*15;
+        NSTimeInterval secondsIn15MinutesAfter = 60*15;
         NSDate *startTime = [[_todaysClasses objectAtIndex:0] startTime];
         NSTimeInterval timeFromClass = [now timeIntervalSinceDate:startTime];
-        NSTimeInterval secondsIn15Minutes2 = -1*60*15;
+        NSTimeInterval secondsIn15MinutesBefore = -1*60*15;
+        
+        
 
-        if ((timeFromClass < secondsIn15Minutes) && (timeFromClass > secondsIn15Minutes2))  {
+        
+        //if(abs(newLocation.coordinate.latitude - [currentSection xLocation]) < .0002 && abs(newLocation.coordinate.longitude - [currentSection yLocation]) < .0002 )
+        
+
+        if ((timeFromClass < secondsIn15MinutesAfter) && (timeFromClass > secondsIn15MinutesBefore))  {
             self.checkInButton.layer.backgroundColor = [[UIColor colorWithRed:0 green:0.478 blue:1 alpha:1] CGColor];
+            self.checkInButton.enabled = YES;
+            
         }
     }
     
 }
+
+- (IBAction)checkButtonPressed:(id)sender {
+    
+    CLLocationCoordinate2D coordinate = [self getLocation];
+
+    double currentX = coordinate.latitude;
+    double currentY = coordinate.longitude;
+    double classXLocation = [[_todaysClasses objectAtIndex:0] xLocation];
+    double classYLocation = [[_todaysClasses objectAtIndex:0] yLocation];
+    if ((abs(currentX-classXLocation) < .0002) && (abs(currentY-classYLocation))) {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Checked In!"
+                                                    message:@"Congrats on not being a Sloth"
+                                                   delegate:nil
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    [alert show];
+    }
+    else {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"LOL"
+                                                        message:@"Nice try. Get to Class!"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+        
+    }
+    
+   /* CLLocationCoordinate2D coordinate = [self getLocation];
+    
+    double currentX = coordinate.latitude;
+    double currentY = coordinate.longitude;
+    double classXLocation = [[_todaysClasses objectAtIndex:0] xLocation];
+    double classYLocation = [[_todaysClasses objectAtIndex:0] yLocation];
+    
+    
+    
+        
+        if ((abs(currentX-classXLocation) < .0002) && (abs(currentY-classYLocation))) {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Checked In!"
+                                                            message:@"Congrats on not being a Sloth"
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil];
+            [alert show];
+        }
+        else {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"LOL"
+                                                            message:@"Nice try. Get to Class!"
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil];
+            [alert show];
+            
+        }*/
+    
+
+}
+
+/*- (IBAction)checkInButtonPressed:(id)sender {
+    
+    CLLocationCoordinate2D coordinate = [self getLocation];
+    
+    double currentX = coordinate.latitude;
+    double currentY = coordinate.longitude;
+    double classXLocation = [[_todaysClasses objectAtIndex:0] xLocation];
+    double classYLocation = [[_todaysClasses objectAtIndex:0] yLocation];
+ 
+    
+        if (self.checkInButton.enabled == YES) {
+        
+        if ((abs(currentX-classXLocation) < .0002) && (abs(currentY-classYLocation))) {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Checked In!"
+                                                            message:@"Congrats on not being a Sloth"
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil];
+            [alert show];
+        }
+        else {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"LOL"
+                                                            message:@"Nice try. Get to Class!"
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"OK"
+                                                  otherButtonTitles:nil];
+            [alert show];
+
+        }
+    }
+}*/
+
+-(CLLocationCoordinate2D) getLocation{
+    CLLocationManager *locationManager = [[CLLocationManager alloc] init];
+    locationManager.delegate = self;
+    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    locationManager.distanceFilter = kCLDistanceFilterNone;
+    [locationManager startUpdatingLocation];
+    CLLocation *location = [locationManager location];
+    CLLocationCoordinate2D coordinate = [location coordinate];
+    
+    return coordinate;
+}
+
+
+
 
 
 /*

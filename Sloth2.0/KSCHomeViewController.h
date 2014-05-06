@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 
-@interface KSCHomeViewController : UIViewController <UITableViewDelegate>
+
+@interface KSCHomeViewController : UIViewController <UITableViewDelegate, CLLocationManagerDelegate>
 
 @end
