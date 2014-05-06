@@ -40,6 +40,8 @@ BOOL checkedIn = NO;
     if (checkedIn == NO) {
         absences++;
         NSLog(@"ABSENCES: %d", absences);
+        [_todaysClasses removeObjectAtIndex:0];
+        [_todaysClassesTable reloadData];
     }
 }
 
@@ -58,7 +60,7 @@ BOOL checkedIn = NO;
     [myFormatter setDateFormat:@"EEEE"]; // day, like "Saturday"
     [myFormatter setDateFormat:@"c"]; // day number, like 7 for saturday
     NSString *dayOfWeek = [myFormatter stringFromDate:today];
-    NSLog(@"Today is: %@", dayOfWeek);
+    //NSLog(@"Today is: %@", dayOfWeek);
     
     
     self.model = [KSCClassesModel sharedModel];
@@ -72,12 +74,6 @@ BOOL checkedIn = NO;
             NSString* thirdDay = [[_model classAtIndex:i].daysOfClass substringWithRange:NSMakeRange(2, 1)];
             NSString* fourthDay = [[_model classAtIndex:i].daysOfClass substringWithRange:NSMakeRange(3, 1)];
             NSString* fifthDay = [[_model classAtIndex:i].daysOfClass substringWithRange:NSMakeRange(4, 1)];
-            
-            /*NSLog(@"%@", firstDay);
-            NSLog(@"%@", secondDay);
-            NSLog(@"%@", thirdDay);
-            NSLog(@"%@", fourthDay);
-            NSLog(@"%@", fifthDay);*/
             
             if ([dayOfWeek isEqualToString:@"2"] && [firstDay isEqualToString:@"1"]) {
                 NSLog(@"Monday Class");
@@ -107,23 +103,14 @@ BOOL checkedIn = NO;
     NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"startTime" ascending:YES];
     [_todaysClasses sortUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];
     
-    for (int j = 0; j < _todaysClasses.count; j++) {
-        NSLog(@"%@", [[_todaysClasses objectAtIndex:j] sectionName]);
-    }
-    
     NSDate *startTime = [[_todaysClasses objectAtIndex:0] startTime];
     NSTimeInterval secondsIn15MinutesAfter = 60;
     NSDate *missedClass = [startTime dateByAddingTimeInterval:secondsIn15MinutesAfter];
     
     
-    /*NSDate* now = [NSDate date];
-     NSTimeInterval secondsIn15MinutesAfter = 60*15;
-     NSDate *startTime = [[_todaysClasses objectAtIndex:0] startTime];
-     NSTimeInterval timeFromClass = [now timeIntervalSinceDate:startTime];*/
-    
     NSTimer *timer = [[NSTimer alloc]
                       initWithFireDate:missedClass
-                      interval:0.0 // we're not going to repeat, so...
+                      interval:0.0
                       target:self
                       selector:@selector(doTimedAction:)
                       userInfo:nil
@@ -131,8 +118,6 @@ BOOL checkedIn = NO;
     
     NSRunLoop *runner = [NSRunLoop currentRunLoop];
     [runner addTimer:timer forMode: NSDefaultRunLoopMode];
-   
-    
 
 }
 
@@ -167,9 +152,6 @@ BOOL checkedIn = NO;
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:simpleTableIdentifier];
     }
     
-    
-    
-    
     cell.textLabel.text = [[_todaysClasses objectAtIndex:[indexPath row]] sectionName];
     
     NSDate *startTime = [[_todaysClasses objectAtIndex:[indexPath row]] startTime];
@@ -185,8 +167,6 @@ BOOL checkedIn = NO;
 -(void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if ([indexPath row] == 0) {
-        NSLog(@"TESTING");
-        
         NSDate* now = [NSDate date];
         NSTimeInterval secondsIn15MinutesAfter = 60*15;
         NSDate *startTime = [[_todaysClasses objectAtIndex:0] startTime];
@@ -218,6 +198,8 @@ BOOL checkedIn = NO;
                                           cancelButtonTitle:@"OK"
                                           otherButtonTitles:nil];
         [alert show];
+        [_todaysClasses removeObjectAtIndex:0];
+        [_todaysClassesTable reloadData];
     }
     else {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"LOL"
