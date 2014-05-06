@@ -20,20 +20,36 @@
 
 @end
 
+NSInteger absences;
+BOOL checkedIn = NO;
+
 @implementation KSCHomeViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+        
+       
            }
     return self;
 }
 
+-(void)doTimedAction:(NSTimer *)timer {
+    NSLog(@"testing");
+    if (checkedIn == NO) {
+        absences++;
+        NSLog(@"ABSENCES: %d", absences);
+    }
+}
+
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-        
+    
+  
     
     _todaysClasses = [[NSMutableArray alloc] init];
     [self.checkInButton setEnabled:NO];
@@ -94,6 +110,27 @@
     for (int j = 0; j < _todaysClasses.count; j++) {
         NSLog(@"%@", [[_todaysClasses objectAtIndex:j] sectionName]);
     }
+    
+    NSDate *startTime = [[_todaysClasses objectAtIndex:0] startTime];
+    NSTimeInterval secondsIn15MinutesAfter = 60;
+    NSDate *missedClass = [startTime dateByAddingTimeInterval:secondsIn15MinutesAfter];
+    
+    
+    /*NSDate* now = [NSDate date];
+     NSTimeInterval secondsIn15MinutesAfter = 60*15;
+     NSDate *startTime = [[_todaysClasses objectAtIndex:0] startTime];
+     NSTimeInterval timeFromClass = [now timeIntervalSinceDate:startTime];*/
+    
+    NSTimer *timer = [[NSTimer alloc]
+                      initWithFireDate:missedClass
+                      interval:0.0 // we're not going to repeat, so...
+                      target:self
+                      selector:@selector(doTimedAction:)
+                      userInfo:nil
+                      repeats:NO];
+    
+    NSRunLoop *runner = [NSRunLoop currentRunLoop];
+    [runner addTimer:timer forMode: NSDefaultRunLoopMode];
    
     
 
@@ -155,12 +192,6 @@
         NSDate *startTime = [[_todaysClasses objectAtIndex:0] startTime];
         NSTimeInterval timeFromClass = [now timeIntervalSinceDate:startTime];
         NSTimeInterval secondsIn15MinutesBefore = -1*60*15;
-        
-        
-
-        
-        //if(abs(newLocation.coordinate.latitude - [currentSection xLocation]) < .0002 && abs(newLocation.coordinate.longitude - [currentSection yLocation]) < .0002 )
-        
 
         if ((timeFromClass < secondsIn15MinutesAfter) && (timeFromClass > secondsIn15MinutesBefore))  {
             self.checkInButton.layer.backgroundColor = [[UIColor colorWithRed:0 green:0.478 blue:1 alpha:1] CGColor];
@@ -180,12 +211,13 @@
     double classXLocation = [[_todaysClasses objectAtIndex:0] xLocation];
     double classYLocation = [[_todaysClasses objectAtIndex:0] yLocation];
     if ((abs(currentX-classXLocation) < .0002) && (abs(currentY-classYLocation))) {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Checked In!"
+        checkedIn = YES;
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Checked In!"
                                                     message:@"Congrats on not being a Sloth"
                                                    delegate:nil
                                           cancelButtonTitle:@"OK"
                                           otherButtonTitles:nil];
-    [alert show];
+        [alert show];
     }
     else {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"LOL"
@@ -196,69 +228,9 @@
         [alert show];
         
     }
-    
-   /* CLLocationCoordinate2D coordinate = [self getLocation];
-    
-    double currentX = coordinate.latitude;
-    double currentY = coordinate.longitude;
-    double classXLocation = [[_todaysClasses objectAtIndex:0] xLocation];
-    double classYLocation = [[_todaysClasses objectAtIndex:0] yLocation];
-    
-    
-    
-        
-        if ((abs(currentX-classXLocation) < .0002) && (abs(currentY-classYLocation))) {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Checked In!"
-                                                            message:@"Congrats on not being a Sloth"
-                                                           delegate:nil
-                                                  cancelButtonTitle:@"OK"
-                                                  otherButtonTitles:nil];
-            [alert show];
-        }
-        else {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"LOL"
-                                                            message:@"Nice try. Get to Class!"
-                                                           delegate:nil
-                                                  cancelButtonTitle:@"OK"
-                                                  otherButtonTitles:nil];
-            [alert show];
-            
-        }*/
-    
 
 }
 
-/*- (IBAction)checkInButtonPressed:(id)sender {
-    
-    CLLocationCoordinate2D coordinate = [self getLocation];
-    
-    double currentX = coordinate.latitude;
-    double currentY = coordinate.longitude;
-    double classXLocation = [[_todaysClasses objectAtIndex:0] xLocation];
-    double classYLocation = [[_todaysClasses objectAtIndex:0] yLocation];
- 
-    
-        if (self.checkInButton.enabled == YES) {
-        
-        if ((abs(currentX-classXLocation) < .0002) && (abs(currentY-classYLocation))) {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Checked In!"
-                                                            message:@"Congrats on not being a Sloth"
-                                                           delegate:nil
-                                                  cancelButtonTitle:@"OK"
-                                                  otherButtonTitles:nil];
-            [alert show];
-        }
-        else {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"LOL"
-                                                            message:@"Nice try. Get to Class!"
-                                                           delegate:nil
-                                                  cancelButtonTitle:@"OK"
-                                                  otherButtonTitles:nil];
-            [alert show];
-
-        }
-    }
-}*/
 
 -(CLLocationCoordinate2D) getLocation{
     CLLocationManager *locationManager = [[CLLocationManager alloc] init];
