@@ -11,6 +11,7 @@
 #import "KSCClass.h"
 #import "KSCClassesModel.h"
 #import "KSCAddClassesTableViewController.h"
+#import <Parse/Parse.h>
 
 @interface KSCInputClassesTableViewController ()
 
@@ -314,6 +315,20 @@ double yLoc;
         [alert show];
     }
     else {
+        
+        // Create Post
+        PFObject *newClass = [PFObject objectWithClassName:@"Class"];
+        
+        // Set text content
+        [newClass setObject:className forKey:@"name"];
+        [newClass setObject:startTime forKey:@"start"];
+        [newClass setObject:endTime forKey:@"end"];
+        [newClass setObject:days forKey:@"days"];
+        [newClass setObject:[NSNumber numberWithDouble:xLoc] forKey:@"xlocation"];
+        [newClass setObject:[NSNumber numberWithDouble:yLoc] forKey:@"ylocation"];
+        
+        [newClass setObject:[PFUser currentUser] forKey:@"user"];
+        [newClass saveInBackground];
     
         NSInteger classIndex = [self.model numberOfClasses];
         [self.model insertClass: [[KSCClass alloc] initWithSectionName:className andStartTime:startTime andxLoc:xLoc andyLoc:yLoc andEndTime:endTime andDays:days] atIndex:classIndex];
@@ -324,6 +339,9 @@ double yLoc;
     }
     
     //NSLog (@"%d", _model.numberOfClasses);
+    
+    
+    
     
 }
 
