@@ -8,6 +8,7 @@
 
 #import "KSCAppDelegate.h"
 #import <FacebookSDK/FacebookSDK.h>
+#import <Parse/Parse.h>
 
 
 @implementation KSCAppDelegate
@@ -17,6 +18,11 @@
     // Override point for customization after application launch.
     [FBProfilePictureView class];
     [FBLoginView class];
+    
+    // Parse
+    [Parse setApplicationId:@"gvoNV9a4qhNJwjVnTfx404frY9DSrD7ADRfFc1gL"
+                  clientKey:@"JaZiEJKqHErOhYTu3gjs6dWG8Fn2Wyp5sjwoLGJM"];
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
     return YES;
 }

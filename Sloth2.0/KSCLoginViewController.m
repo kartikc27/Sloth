@@ -7,6 +7,7 @@
 //
 
 #import "KSCLoginViewController.h"
+#import <Parse/Parse.h>
 
 @interface KSCLoginViewController ()
 
@@ -47,6 +48,11 @@
 - (void)loginViewShowingLoggedInUser:(FBLoginView *)loginView {
     self.statusLabel.text = @"You're logged in as";
     [self.continueButton setHidden:NO];
+    
+    // if first time user then "setup" button, add user to parse
+    // if existing user, then "continue" button. load data in home screen's view did load method
+    
+    
 }
 
 // Logged-out user experience
@@ -62,6 +68,15 @@
                             user:(id<FBGraphUser>)user {
     self.profilePictureView.profileID = user.id;
     self.nameLabel.text = user.name;
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    [defaults setObject:user.name forKey:@"firstName"];
+    [defaults synchronize];
+    
+    PFObject *userInfo = [PFObject objectWithClassName:@"UserInfo"];
+    userInfo[@"name"] = user.name;
+    [userInfo saveInBackground];
 }
 
 // Handle possible errors that can occur during login
