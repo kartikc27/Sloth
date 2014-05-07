@@ -10,6 +10,8 @@
 #import <FacebookSDK/FacebookSDK.h>
 
 
-@interface KSCLoginViewController : UIViewController
+@interface KSCLoginViewController : UIViewController <FBLoginViewDelegate>
+
+@property (weak, nonatomic) IBOutlet FBLoginView *loginView;
 
 @end
