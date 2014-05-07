@@ -40,6 +40,8 @@
 		53E4FBE4191A04FF00CA9971 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53E4FBE3191A04FF00CA9971 /* Security.framework */; };
 		53E4FBE6191A050C00CA9971 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53E4FBE5191A050C00CA9971 /* StoreKit.framework */; };
 		53E4FBE8191A051200CA9971 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53E4FBE7191A051200CA9971 /* SystemConfiguration.framework */; };
+		53E4FBEA191A292C00CA9971 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53E4FBE9191A292C00CA9971 /* LoginViewController.xib */; };
+		53E4FBF0191A2A7A00CA9971 /* KSCUserDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E4FBEF191A2A7A00CA9971 /* KSCUserDetailsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +100,9 @@
 		53E4FBE3191A04FF00CA9971 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		53E4FBE5191A050C00CA9971 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		53E4FBE7191A051200CA9971 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		53E4FBE9191A292C00CA9971 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		53E4FBEE191A2A7A00CA9971 /* KSCUserDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSCUserDetailsViewController.h; sourceTree = "<group>"; };
+		53E4FBEF191A2A7A00CA9971 /* KSCUserDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSCUserDetailsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,7 +204,10 @@
 				53E4FBD31919CA7500CA9971 /* KSCLoginViewController.m */,
 				53BDD7F91912F1EB00E12BC1 /* KSCAppDelegate.h */,
 				53BDD7FA1912F1EB00E12BC1 /* KSCAppDelegate.m */,
+				53E4FBE9191A292C00CA9971 /* LoginViewController.xib */,
 				53BDD7FC1912F1EB00E12BC1 /* Main.storyboard */,
+				53E4FBEE191A2A7A00CA9971 /* KSCUserDetailsViewController.h */,
+				53E4FBEF191A2A7A00CA9971 /* KSCUserDetailsViewController.m */,
 				53BDD8021912F1EB00E12BC1 /* Images.xcassets */,
 				53BDD7F11912F1EB00E12BC1 /* Supporting Files */,
 			);
@@ -312,6 +320,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53E4FBEA191A292C00CA9971 /* LoginViewController.xib in Resources */,
 				53BDD8031912F1EB00E12BC1 /* Images.xcassets in Resources */,
 				53BDD7F51912F1EB00E12BC1 /* InfoPlist.strings in Resources */,
 				53BDD7FE1912F1EB00E12BC1 /* Main.storyboard in Resources */,
@@ -343,6 +352,7 @@
 				53BDD82D1915AB1000E12BC1 /* KSCClassesModel.m in Sources */,
 				53BDD7F71912F1EB00E12BC1 /* main.m in Sources */,
 				53E4FBC91916DD8300CA9971 /* KSCMapViewController.m in Sources */,
+				53E4FBF0191A2A7A00CA9971 /* KSCUserDetailsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

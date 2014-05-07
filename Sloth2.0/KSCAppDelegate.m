@@ -8,6 +8,7 @@
 
 #import "KSCAppDelegate.h"
 #import <FacebookSDK/FacebookSDK.h>
+#import "KSCLoginViewController.h"
 #import <Parse/Parse.h>
 
 
@@ -23,6 +24,9 @@
     [Parse setApplicationId:@"gvoNV9a4qhNJwjVnTfx404frY9DSrD7ADRfFc1gL"
                   clientKey:@"JaZiEJKqHErOhYTu3gjs6dWG8Fn2Wyp5sjwoLGJM"];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    [PFFacebookUtils initializeFacebook];
+    
+    //self.window.rootViewController = [[UIViewController alloc] initWithRootViewController:[[KSCLoginViewController alloc] init]];
     
     return YES;
 }
@@ -47,6 +51,8 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    
+    [FBAppCall handleDidBecomeActiveWithSession:[PFFacebookUtils session]];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
@@ -54,7 +60,7 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
-- (BOOL)application:(UIApplication *)application
+/*- (BOOL)application:(UIApplication *)application
             openURL:(NSURL *)url
   sourceApplication:(NSString *)sourceApplication
          annotation:(id)annotation {
@@ -66,5 +72,15 @@
     
     return wasHandled;
 }
+*/
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation {
+    return [FBAppCall handleOpenURL:url
+                  sourceApplication:sourceApplication
+                        withSession:[PFFacebookUtils session]];
+}
+
 
 @end

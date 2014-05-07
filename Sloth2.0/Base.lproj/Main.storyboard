@@ -16,53 +16,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GSz-Z2-wCp" customClass="FBLoginView">
-                                <rect key="frame" x="41" y="287" width="253" height="64"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <connections>
-                                    <outlet property="delegate" destination="IYT-Ms-jUj" id="9iZ-gn-2lZ"/>
-                                </connections>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aTm-Jx-eDM" customClass="FBProfilePictureView">
-                                <rect key="frame" x="105" y="121" width="110" height="110"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                            </view>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7OW-Nf-I7A" userLabel="Name Label">
-                                <rect key="frame" x="68" y="245" width="184" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8E7-Ta-ha7" userLabel="Status Label">
-                                <rect key="frame" x="39" y="92" width="243" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Is1-bD-Onj">
-                                <rect key="frame" x="70" y="382" width="180" height="42"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ui-r3-w3w">
+                                <rect key="frame" x="62" y="263" width="196" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Continue">
+                                <state key="normal" title="Log in with Facebook">
                                     <color key="titleColor" red="0.99034069619999998" green="1" blue="0.9692810462" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="hZO-Wg-cjT" kind="modal" id="eza-Fs-HD2"/>
+                                    <action selector="loginButtonTouchHandler:" destination="IYT-Ms-jUj" eventType="touchUpInside" id="6D7-cG-F5E"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <connections>
-                        <outlet property="continueButton" destination="Is1-bD-Onj" id="cD4-OJ-zs5"/>
-                        <outlet property="loginView" destination="GSz-Z2-wCp" id="Q09-x2-nVV"/>
-                        <outlet property="nameLabel" destination="7OW-Nf-I7A" id="KgH-6Q-vGC"/>
-                        <outlet property="profilePictureView" destination="aTm-Jx-eDM" id="yT7-uu-h8l"/>
-                        <outlet property="statusLabel" destination="8E7-Ta-ha7" id="Qgh-vg-akc"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cwj-cp-noM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -71,7 +39,7 @@
         <!--Set Up View Controller - Set Up-->
         <scene sceneID="B1t-2a-cmC">
             <objects>
-                <viewController id="hZO-Wg-cjT" customClass="KSCSetUpViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AfterLoginVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hZO-Wg-cjT" customClass="KSCSetUpViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Z7g-Au-5CK"/>
                         <viewControllerLayoutGuide type="bottom" id="cXZ-dC-K8c"/>
