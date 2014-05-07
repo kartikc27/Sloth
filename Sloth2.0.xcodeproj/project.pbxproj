@@ -24,7 +24,7 @@
 		53BDD8241913995600E12BC1 /* KSCAddClassesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53BDD8231913995600E12BC1 /* KSCAddClassesTableViewController.m */; };
 		53BDD82A1914E3F100E12BC1 /* KSCClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 53BDD8291914E3F100E12BC1 /* KSCClass.m */; };
 		53BDD82D1915AB1000E12BC1 /* KSCClassesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 53BDD82C1915AB1000E12BC1 /* KSCClassesModel.m */; };
-		53BDD833191628CF00E12BC1 /* InputClassesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53BDD832191628CF00E12BC1 /* InputClassesTableViewController.m */; };
+		53BDD833191628CF00E12BC1 /* KSCInputClassesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53BDD832191628CF00E12BC1 /* KSCInputClassesTableViewController.m */; };
 		53E4FBC419164E8D00CA9971 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53E4FBC319164E8D00CA9971 /* MapKit.framework */; };
 		53E4FBC619164E9600CA9971 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53E4FBC519164E9600CA9971 /* CoreLocation.framework */; };
 		53E4FBC91916DD8300CA9971 /* KSCMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E4FBC81916DD8300CA9971 /* KSCMapViewController.m */; };
@@ -40,7 +40,7 @@
 		53E4FBE4191A04FF00CA9971 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53E4FBE3191A04FF00CA9971 /* Security.framework */; };
 		53E4FBE6191A050C00CA9971 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53E4FBE5191A050C00CA9971 /* StoreKit.framework */; };
 		53E4FBE8191A051200CA9971 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53E4FBE7191A051200CA9971 /* SystemConfiguration.framework */; };
-		53E4FBEA191A292C00CA9971 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53E4FBE9191A292C00CA9971 /* LoginViewController.xib */; };
+		53E4FBEA191A292C00CA9971 /* KSCLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53E4FBE9191A292C00CA9971 /* KSCLoginViewController.xib */; };
 		53E4FBF0191A2A7A00CA9971 /* KSCUserDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E4FBEF191A2A7A00CA9971 /* KSCUserDetailsViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -80,14 +80,14 @@
 		53BDD8291914E3F100E12BC1 /* KSCClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSCClass.m; sourceTree = "<group>"; };
 		53BDD82B1915AB1000E12BC1 /* KSCClassesModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSCClassesModel.h; sourceTree = "<group>"; };
 		53BDD82C1915AB1000E12BC1 /* KSCClassesModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSCClassesModel.m; sourceTree = "<group>"; };
-		53BDD832191628CF00E12BC1 /* InputClassesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InputClassesTableViewController.m; path = Sloth2.0/InputClassesTableViewController.m; sourceTree = SOURCE_ROOT; };
+		53BDD832191628CF00E12BC1 /* KSCInputClassesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KSCInputClassesTableViewController.m; path = Sloth2.0/KSCInputClassesTableViewController.m; sourceTree = SOURCE_ROOT; };
 		53E4FBC319164E8D00CA9971 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		53E4FBC519164E9600CA9971 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		53E4FBC71916DD8300CA9971 /* KSCMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSCMapViewController.h; sourceTree = "<group>"; };
 		53E4FBC81916DD8300CA9971 /* KSCMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSCMapViewController.m; sourceTree = "<group>"; };
 		53E4FBCA1917743A00CA9971 /* KSCHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSCHomeViewController.h; sourceTree = "<group>"; };
 		53E4FBCB1917743A00CA9971 /* KSCHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSCHomeViewController.m; sourceTree = "<group>"; };
-		53E4FBCD19178AAC00CA9971 /* InputClassesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InputClassesTableViewController.h; path = Sloth2.0/InputClassesTableViewController.h; sourceTree = SOURCE_ROOT; };
+		53E4FBCD19178AAC00CA9971 /* KSCInputClassesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KSCInputClassesTableViewController.h; path = Sloth2.0/KSCInputClassesTableViewController.h; sourceTree = SOURCE_ROOT; };
 		53E4FBD01919C7E800CA9971 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		53E4FBD21919CA7500CA9971 /* KSCLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSCLoginViewController.h; sourceTree = "<group>"; };
 		53E4FBD31919CA7500CA9971 /* KSCLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSCLoginViewController.m; sourceTree = "<group>"; };
@@ -100,7 +100,7 @@
 		53E4FBE3191A04FF00CA9971 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		53E4FBE5191A050C00CA9971 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		53E4FBE7191A051200CA9971 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		53E4FBE9191A292C00CA9971 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		53E4FBE9191A292C00CA9971 /* KSCLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KSCLoginViewController.xib; sourceTree = "<group>"; };
 		53E4FBEE191A2A7A00CA9971 /* KSCUserDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSCUserDetailsViewController.h; sourceTree = "<group>"; };
 		53E4FBEF191A2A7A00CA9971 /* KSCUserDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSCUserDetailsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -194,8 +194,8 @@
 				53BDD8201912F4B500E12BC1 /* KSCSetUpViewController.m */,
 				53BDD8221913995600E12BC1 /* KSCAddClassesTableViewController.h */,
 				53BDD8231913995600E12BC1 /* KSCAddClassesTableViewController.m */,
-				53E4FBCD19178AAC00CA9971 /* InputClassesTableViewController.h */,
-				53BDD832191628CF00E12BC1 /* InputClassesTableViewController.m */,
+				53E4FBCD19178AAC00CA9971 /* KSCInputClassesTableViewController.h */,
+				53BDD832191628CF00E12BC1 /* KSCInputClassesTableViewController.m */,
 				53E4FBC71916DD8300CA9971 /* KSCMapViewController.h */,
 				53E4FBC81916DD8300CA9971 /* KSCMapViewController.m */,
 				53E4FBCA1917743A00CA9971 /* KSCHomeViewController.h */,
@@ -204,7 +204,7 @@
 				53E4FBD31919CA7500CA9971 /* KSCLoginViewController.m */,
 				53BDD7F91912F1EB00E12BC1 /* KSCAppDelegate.h */,
 				53BDD7FA1912F1EB00E12BC1 /* KSCAppDelegate.m */,
-				53E4FBE9191A292C00CA9971 /* LoginViewController.xib */,
+				53E4FBE9191A292C00CA9971 /* KSCLoginViewController.xib */,
 				53BDD7FC1912F1EB00E12BC1 /* Main.storyboard */,
 				53E4FBEE191A2A7A00CA9971 /* KSCUserDetailsViewController.h */,
 				53E4FBEF191A2A7A00CA9971 /* KSCUserDetailsViewController.m */,
@@ -320,7 +320,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				53E4FBEA191A292C00CA9971 /* LoginViewController.xib in Resources */,
+				53E4FBEA191A292C00CA9971 /* KSCLoginViewController.xib in Resources */,
 				53BDD8031912F1EB00E12BC1 /* Images.xcassets in Resources */,
 				53BDD7F51912F1EB00E12BC1 /* InfoPlist.strings in Resources */,
 				53BDD7FE1912F1EB00E12BC1 /* Main.storyboard in Resources */,
@@ -348,7 +348,7 @@
 				53BDD8211912F4B500E12BC1 /* KSCSetUpViewController.m in Sources */,
 				53E4FBD41919CA7500CA9971 /* KSCLoginViewController.m in Sources */,
 				53BDD82A1914E3F100E12BC1 /* KSCClass.m in Sources */,
-				53BDD833191628CF00E12BC1 /* InputClassesTableViewController.m in Sources */,
+				53BDD833191628CF00E12BC1 /* KSCInputClassesTableViewController.m in Sources */,
 				53BDD82D1915AB1000E12BC1 /* KSCClassesModel.m in Sources */,
 				53BDD7F71912F1EB00E12BC1 /* main.m in Sources */,
 				53E4FBC91916DD8300CA9971 /* KSCMapViewController.m in Sources */,

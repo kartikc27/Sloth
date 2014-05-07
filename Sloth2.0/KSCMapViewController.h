@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
-#import "InputClassesTableViewController.h"
+#import "KSCInputClassesTableViewController.h"
 
 
 @interface KSCMapViewController : UIViewController

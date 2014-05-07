@@ -87,6 +87,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="saveButtonTouched:" destination="hZO-Wg-cjT" eventType="touchUpInside" id="nPC-3I-Lyj"/>
                                     <segue destination="iRt-eH-HR4" kind="modal" id="4h5-vq-u3U"/>
                                 </connections>
                             </button>
@@ -174,6 +175,7 @@
                         <outlet property="absencesStepper" destination="dB5-zC-14k" id="iG6-sQ-NKI"/>
                         <outlet property="messageTF" destination="vke-3u-21u" id="ips-Ad-qcO"/>
                         <outlet property="phoneNumberTF" destination="eIL-Ya-WWn" id="myd-t1-1Bj"/>
+                        <outlet property="punishmentSegControl" destination="sPx-7a-vDe" id="Byy-N6-T1s"/>
                         <outlet property="saveButton" destination="eTK-IV-zBb" id="Kyb-qU-aLk"/>
                         <outlet property="textMessageView" destination="4uP-oa-z4f" id="ufx-3d-O13"/>
                     </connections>
@@ -286,7 +288,7 @@
         <!--Input Classes Table View Controller - Add Class-->
         <scene sceneID="3b7-xs-Gwp">
             <objects>
-                <tableViewController storyboardIdentifier="InputClassesController" id="Smk-x9-h2y" customClass="InputClassesTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="InputClassesController" id="Smk-x9-h2y" customClass="KSCInputClassesTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="2kH-Nk-8SK">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

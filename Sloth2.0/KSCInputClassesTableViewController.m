@@ -6,13 +6,13 @@
 //  Copyright (c) 2014 KSC. All rights reserved.
 //
 
-#import "InputClassesTableViewController.h"
+#import "KSCInputClassesTableViewController.h"
 #import "KSCMapViewController.h"
 #import "KSCClass.h"
 #import "KSCClassesModel.h"
 #import "KSCAddClassesTableViewController.h"
 
-@interface InputClassesTableViewController ()
+@interface KSCInputClassesTableViewController ()
 
 @property (weak, nonatomic) IBOutlet UITableViewCell *startTimeCell;
 @property (weak, nonatomic) IBOutlet UIDatePicker *startPickerCell;
@@ -44,7 +44,7 @@ double xLoc;
 double yLoc;
 
 
-@implementation InputClassesTableViewController
+@implementation KSCInputClassesTableViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {

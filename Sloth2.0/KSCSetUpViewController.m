@@ -7,6 +7,8 @@
 //
 
 #import "KSCSetUpViewController.h"
+#import <Parse/Parse.h>
+
 
 @interface KSCSetUpViewController () 
 
@@ -20,6 +22,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *messageTF;
 
 @property (weak, nonatomic) IBOutlet UIButton *saveButton;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *punishmentSegControl;
 
 @end
 
@@ -118,6 +121,34 @@
         self.saveButton.enabled=NO;
     }
 
+}
+
+
+- (IBAction)saveButtonTouched:(id)sender {
+    NSString* punishment;
+    NSInteger numberOfAbsences;
+    NSString* textMessage;
+    NSString* phoneNumber;
+    
+    numberOfAbsences = (int)_absencesStepper.value;
+    
+
+    numberOfAbsences = _absencesStepper.value;
+    textMessage = _messageTF.text;
+    phoneNumber =  _messageTF.text;
+    if (_punishmentSegControl.selectedSegmentIndex == 0) {
+        punishment = @"textmessage";
+        
+    }
+    
+    [[PFUser currentUser] setObject:punishment forKey:@"punishment"];
+    [[PFUser currentUser] setObject:[NSNumber numberWithInteger:numberOfAbsences] forKey:@"allowedAbsences"];
+    [[PFUser currentUser] setObject:textMessage forKey:@"textMessage"];
+    [[PFUser currentUser] setObject:phoneNumber forKey:@"phoneNumber"];
+    [[PFUser currentUser] saveInBackground];
+    [[PFUser currentUser] fetchIfNeeded];
+    /*NSString *nameString = [[PFUser currentUser] objectForKey:@"name"];
+    NSLog(@"%@", nameString);*/
 }
 
 /*
