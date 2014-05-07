@@ -31,6 +31,7 @@
 		53E4FBCC1917743A00CA9971 /* KSCHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E4FBCB1917743A00CA9971 /* KSCHomeViewController.m */; };
 		53E4FBD11919C7E800CA9971 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53E4FBD01919C7E800CA9971 /* FacebookSDK.framework */; };
 		53E4FBD41919CA7500CA9971 /* KSCLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E4FBD31919CA7500CA9971 /* KSCLoginViewController.m */; };
+		53E4FBD8191A033B00CA9971 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53E4FBD7191A033B00CA9971 /* Parse.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 		53E4FBD01919C7E800CA9971 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		53E4FBD21919CA7500CA9971 /* KSCLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSCLoginViewController.h; sourceTree = "<group>"; };
 		53E4FBD31919CA7500CA9971 /* KSCLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSCLoginViewController.m; sourceTree = "<group>"; };
+		53E4FBD7191A033B00CA9971 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 				53E4FBC619164E9600CA9971 /* CoreLocation.framework in Frameworks */,
 				53E4FBC419164E8D00CA9971 /* MapKit.framework in Frameworks */,
 				53BDD7ED1912F1EB00E12BC1 /* CoreGraphics.framework in Frameworks */,
+				53E4FBD8191A033B00CA9971 /* Parse.framework in Frameworks */,
 				53BDD7EF1912F1EB00E12BC1 /* UIKit.framework in Frameworks */,
 				53BDD7EB1912F1EB00E12BC1 /* Foundation.framework in Frameworks */,
 				53E4FBD11919C7E800CA9971 /* FacebookSDK.framework in Frameworks */,
@@ -131,6 +134,7 @@
 		53BDD7E91912F1EB00E12BC1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				53E4FBD7191A033B00CA9971 /* Parse.framework */,
 				53E4FBD01919C7E800CA9971 /* FacebookSDK.framework */,
 				53E4FBC519164E9600CA9971 /* CoreLocation.framework */,
 				53E4FBC319164E8D00CA9971 /* MapKit.framework */,
