@@ -29,6 +29,8 @@
 		53E4FBC619164E9600CA9971 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53E4FBC519164E9600CA9971 /* CoreLocation.framework */; };
 		53E4FBC91916DD8300CA9971 /* KSCMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E4FBC81916DD8300CA9971 /* KSCMapViewController.m */; };
 		53E4FBCC1917743A00CA9971 /* KSCHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E4FBCB1917743A00CA9971 /* KSCHomeViewController.m */; };
+		53E4FBD11919C7E800CA9971 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53E4FBD01919C7E800CA9971 /* FacebookSDK.framework */; };
+		53E4FBD41919CA7500CA9971 /* KSCLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E4FBD31919CA7500CA9971 /* KSCLoginViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +77,9 @@
 		53E4FBCA1917743A00CA9971 /* KSCHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSCHomeViewController.h; sourceTree = "<group>"; };
 		53E4FBCB1917743A00CA9971 /* KSCHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSCHomeViewController.m; sourceTree = "<group>"; };
 		53E4FBCD19178AAC00CA9971 /* InputClassesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InputClassesTableViewController.h; path = Sloth2.0/InputClassesTableViewController.h; sourceTree = SOURCE_ROOT; };
+		53E4FBD01919C7E800CA9971 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
+		53E4FBD21919CA7500CA9971 /* KSCLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSCLoginViewController.h; sourceTree = "<group>"; };
+		53E4FBD31919CA7500CA9971 /* KSCLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSCLoginViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +92,7 @@
 				53BDD7ED1912F1EB00E12BC1 /* CoreGraphics.framework in Frameworks */,
 				53BDD7EF1912F1EB00E12BC1 /* UIKit.framework in Frameworks */,
 				53BDD7EB1912F1EB00E12BC1 /* Foundation.framework in Frameworks */,
+				53E4FBD11919C7E800CA9971 /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,6 +131,7 @@
 		53BDD7E91912F1EB00E12BC1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				53E4FBD01919C7E800CA9971 /* FacebookSDK.framework */,
 				53E4FBC519164E9600CA9971 /* CoreLocation.framework */,
 				53E4FBC319164E8D00CA9971 /* MapKit.framework */,
 				53BDD7EA1912F1EB00E12BC1 /* Foundation.framework */,
@@ -152,6 +159,8 @@
 				53E4FBC81916DD8300CA9971 /* KSCMapViewController.m */,
 				53E4FBCA1917743A00CA9971 /* KSCHomeViewController.h */,
 				53E4FBCB1917743A00CA9971 /* KSCHomeViewController.m */,
+				53E4FBD21919CA7500CA9971 /* KSCLoginViewController.h */,
+				53E4FBD31919CA7500CA9971 /* KSCLoginViewController.m */,
 				53BDD7F91912F1EB00E12BC1 /* KSCAppDelegate.h */,
 				53BDD7FA1912F1EB00E12BC1 /* KSCAppDelegate.m */,
 				53BDD7FC1912F1EB00E12BC1 /* Main.storyboard */,
@@ -292,6 +301,7 @@
 				53E4FBCC1917743A00CA9971 /* KSCHomeViewController.m in Sources */,
 				53BDD7FB1912F1EB00E12BC1 /* KSCAppDelegate.m in Sources */,
 				53BDD8211912F4B500E12BC1 /* KSCSetUpViewController.m in Sources */,
+				53E4FBD41919CA7500CA9971 /* KSCLoginViewController.m in Sources */,
 				53BDD82A1914E3F100E12BC1 /* KSCClass.m in Sources */,
 				53BDD833191628CF00E12BC1 /* InputClassesTableViewController.m in Sources */,
 				53BDD82D1915AB1000E12BC1 /* KSCClassesModel.m in Sources */,
@@ -421,6 +431,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/Kartik/Documents/FacebookSDK,
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sloth2.0/Sloth2.0-Prefix.pch";
 				INFOPLIST_FILE = "Sloth2.0/Sloth2.0-Info.plist";
@@ -434,6 +449,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/Kartik/Documents/FacebookSDK,
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Sloth2.0/Sloth2.0-Prefix.pch";
 				INFOPLIST_FILE = "Sloth2.0/Sloth2.0-Info.plist";
