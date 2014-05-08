@@ -8,6 +8,7 @@
 
 #import "KSCHomeViewController.h"
 #import "KSCClassesModel.h"
+#import "Parse/Parse.h"
 
 
 
@@ -43,6 +44,9 @@ BOOL checkedIn = NO;
         [_todaysClasses removeObjectAtIndex:0];
         [_todaysClassesTable reloadData];
     }
+    else {
+        checkedIn = NO;
+    }
 }
 
 
@@ -50,6 +54,35 @@ BOOL checkedIn = NO;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.model = [KSCClassesModel sharedModel];
+    
+    PFQuery *classQuery = [PFQuery queryWithClassName:@"Class"];
+    
+    // Follow relationship
+    [classQuery whereKey:@"user" equalTo:[PFUser currentUser]];
+    
+    NSArray* objects = [classQuery findObjects];
+    
+    
+            NSLog(@"SIZE OF PARSE ARRAY %d", objects.count);
+            for (int i = 0; i < objects.count; i++)
+            {
+                
+                PFObject *class = [objects objectAtIndex:i];
+                NSString* className = [class objectForKey:@"name"];
+                double xLoc = [[class objectForKey:@"xlocation"] doubleValue];
+                double yLoc = [[class objectForKey:@"ylocation"] doubleValue];
+                NSString* days = [class objectForKey:@"days"];
+                NSDate* start = [class objectForKey:@"start"];
+                NSDate* end = [class objectForKey:@"end"];
+
+                 [self.model insertClass: [[KSCClass alloc] initWithSectionName:className andStartTime:start andxLoc:xLoc andyLoc:yLoc andEndTime:end andDays:days] atIndex:i];
+
+                
+            }
+     
+    
     
   
     
@@ -63,7 +96,7 @@ BOOL checkedIn = NO;
     //NSLog(@"Today is: %@", dayOfWeek);
     
     
-    self.model = [KSCClassesModel sharedModel];
+    
     
     //NSString * firstLetter = [_model. substringToIndex:1];
     
@@ -102,6 +135,8 @@ BOOL checkedIn = NO;
     }
     NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"startTime" ascending:YES];
     [_todaysClasses sortUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+    
+    [self.todaysClassesTable reloadData];
     
     NSDate *startTime = [[_todaysClasses objectAtIndex:0] startTime];
     NSTimeInterval secondsIn15MinutesAfter = 60;

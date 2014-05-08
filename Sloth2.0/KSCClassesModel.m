@@ -56,6 +56,10 @@
     return [self.classes objectAtIndex:index];
 }
 
+- (void) removeAllClasses  {
+    [self.classes removeAllObjects];
+}
+
 + (instancetype) sharedModel {
     static KSCClassesModel *_sharedModel = nil;
     

@@ -16,7 +16,7 @@
 - (KSCClass *) classAtIndex: (NSUInteger) index;
 - (void) removeClassAtIndex: (NSUInteger) index;
 - (void) insertClass: (KSCClass *) className atIndex: (NSUInteger) index;
-
+- (void) removeAllClasses;
 + (instancetype) sharedModel;
 
 
