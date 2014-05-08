@@ -1,0 +1,14 @@
+{
+    "applications": {
+        "Sloth": {
+            "applicationId": "gvoNV9a4qhNJwjVnTfx404frY9DSrD7ADRfFc1gL", 
+            "masterKey": "29bebNPSZQICmwd6CTVGcJLMQnPpAesNtSTxaiFX"
+        }, 
+        "_default": {
+            "link": "Sloth"
+        }
+    }, 
+    "global": {
+        "parseVersion": "1.2.18"
+    }
+}

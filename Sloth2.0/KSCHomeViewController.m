@@ -37,12 +37,40 @@ BOOL checkedIn = NO;
 }
 
 -(void)doTimedAction:(NSTimer *)timer {
-    NSLog(@"testing");
+    NSLog(@"1 minute past class. Time check user.");
     if (checkedIn == NO) {
         absences++;
         NSLog(@"ABSENCES: %d", absences);
         [_todaysClasses removeObjectAtIndex:0];
+        
         [_todaysClassesTable reloadData];
+        NSString* number = [[PFUser currentUser] objectForKey:@"phoneNumber"];
+        NSLog(@"Sending text to %@", number);
+        
+        NSString* message = [[PFUser currentUser] objectForKey:@"textMessage"];
+
+        NSString *phoneNumber = @"+1";
+        phoneNumber = [phoneNumber stringByAppendingString:number];
+        
+       // NSString* number = @"+15102833032";
+        NSMutableDictionary *params = [NSMutableDictionary dictionaryWithObject:phoneNumber forKey:@"number"];
+        [params setObject:message forKey:@"message"];
+        
+        [PFCloud callFunctionInBackground:@"inviteWithTwilio" withParameters:params block:^(id object, NSError *error) {
+            NSString *message = @"";
+            if (!error) {
+                message = @"Dear Sloth: Work Harder!";
+            } else {
+                message = @"Uh oh, something went wrong :(";
+            }
+            
+            [[[UIAlertView alloc] initWithTitle:@"Invite Sent!"
+                                        message:message
+                                       delegate:nil
+                              cancelButtonTitle:@"Ok"
+                              otherButtonTitles:nil, nil] show];
+        }];
+        
     }
     else {
         checkedIn = NO;

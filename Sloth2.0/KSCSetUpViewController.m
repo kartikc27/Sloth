@@ -135,7 +135,7 @@
 
     numberOfAbsences = _absencesStepper.value;
     textMessage = _messageTF.text;
-    phoneNumber =  _messageTF.text;
+    phoneNumber =  _phoneNumberTF.text;
     if (_punishmentSegControl.selectedSegmentIndex == 0) {
         punishment = @"textmessage";
         
