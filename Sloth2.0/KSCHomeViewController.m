@@ -298,7 +298,7 @@ BOOL checkedIn = NO;
     NSLog(@"%f %f", currentX, currentY);
     double classXLocation = [[_todaysClasses objectAtIndex:0] xLocation];
     double classYLocation = [[_todaysClasses objectAtIndex:0] yLocation];
-    if ((abs(currentX-classXLocation) < 2) && (abs(currentY-classYLocation) < 2)) {
+    if ((abs(currentX-classXLocation) < .0002) && (abs(currentY-classYLocation) < .0002)) {
         checkedIn = YES;
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Checked In!"
                                                         message:@"Congrats on not being a Sloth"
