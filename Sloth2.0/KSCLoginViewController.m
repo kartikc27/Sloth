@@ -5,6 +5,7 @@
 #import "KSCUserDetailsViewController.h"
 #import <Parse/Parse.h>
 #import "KSCSetUpViewController.h"
+#import "KSCHomeViewController.h"
 #import <FacebookSDK/FacebookSDK.h>
 @implementation KSCLoginViewController
 
@@ -85,7 +86,7 @@
             //[self.navigationController pushViewController:[[UserDetailsViewController alloc] initWithStyle:UITableViewStyleGrouped] animated:YES];
             
             UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-            KSCSetUpViewController *viewController = (KSCSetUpViewController *)[storyboard instantiateViewControllerWithIdentifier:@"AfterLoginVC"];
+            KSCHomeViewController *viewController = (KSCHomeViewController *)[storyboard instantiateViewControllerWithIdentifier:@"HomeVC"];
             [self presentViewController:viewController animated:YES completion:nil];
         }
     }];

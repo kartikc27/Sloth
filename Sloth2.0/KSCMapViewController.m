@@ -101,7 +101,7 @@ MKPointAnnotation *dropPin;
     [self.mapView addGestureRecognizer:longPressGesture];
     //mapView.userTrackingMode=YES;
     MKCoordinateRegion mapRegion;
-    mapRegion.center = CLLocationCoordinate2DMake(34.068908, -118.445192);
+    mapRegion.center = CLLocationCoordinate2DMake(34.022292, -118.287622);
     mapRegion.span.latitudeDelta = 0.02;
     mapRegion.span.longitudeDelta = 0.02;
     

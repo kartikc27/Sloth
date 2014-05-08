@@ -39,7 +39,6 @@
 - (void) insertClass: (KSCClass *) className atIndex: (NSUInteger) index{
     NSUInteger numOfClasses = [self numberOfClasses];
     if (index <= numOfClasses) {
-        NSLog(@"TESTING INSERT CLASS");
         NSLog (@"%@", className.sectionName);
         NSLog (@"%@", className.daysOfClass);
         NSLog (@"%@", className.startTime);
@@ -48,7 +47,6 @@
         NSLog (@"%f", className.yLocation);
         [self.classes insertObject:className atIndex:index];
         
-        NSLog(@"count is %d and index is %d", _classes.count, index);
     }
 }
 

@@ -187,7 +187,7 @@
         <!--Home View Controller-->
         <scene sceneID="T1v-Ci-KmT">
             <objects>
-                <viewController id="BPv-Nc-QyW" userLabel="Home View Controller" customClass="KSCHomeViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeVC" id="BPv-Nc-QyW" userLabel="Home View Controller" customClass="KSCHomeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ocL-1E-xxc"/>
                         <viewControllerLayoutGuide type="bottom" id="Gn6-i9-3Et"/>

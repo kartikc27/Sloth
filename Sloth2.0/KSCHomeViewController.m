@@ -41,7 +41,23 @@ BOOL checkedIn = NO;
     if (checkedIn == NO) {
         absences++;
         NSLog(@"ABSENCES: %d", absences);
-        [_todaysClasses removeObjectAtIndex:0];
+        
+        PFQuery *classQuery = [PFQuery queryWithClassName:@"Class"];
+        [classQuery whereKey:@"user" equalTo:[PFUser currentUser]];
+        //NSArray* objects = [classQuery findObjects];
+        
+        PFQuery *missedClassQuery = [PFQuery queryWithClassName:@"Class"];
+        [missedClassQuery whereKey:@"name" equalTo:[[_todaysClasses objectAtIndex:0] sectionName]];
+        
+        PFQuery *mainQuery = [PFQuery orQueryWithSubqueries:@[classQuery,missedClassQuery]];
+        PFObject* object = [mainQuery getFirstObject];
+        [object deleteInBackground];
+        
+        
+        
+        if (_todaysClasses.count > 0) {
+            [_todaysClasses removeObjectAtIndex:0];
+        }
         
         [_todaysClassesTable reloadData];
         NSString* number = [[PFUser currentUser] objectForKey:@"phoneNumber"];
@@ -59,21 +75,16 @@ BOOL checkedIn = NO;
         [PFCloud callFunctionInBackground:@"inviteWithTwilio" withParameters:params block:^(id object, NSError *error) {
             NSString *message = @"";
             if (!error) {
-                message = @"Dear Sloth: Work Harder!";
-            } else {
-                message = @"Uh oh, something went wrong :(";
-            }
+                message = @"Work Harder!";
+            } 
             
-            [[[UIAlertView alloc] initWithTitle:@"Invite Sent!"
+            [[[UIAlertView alloc] initWithTitle:@"Dear Sloth"
                                         message:message
                                        delegate:nil
-                              cancelButtonTitle:@"Ok"
+                              cancelButtonTitle:@"OK"
                               otherButtonTitles:nil, nil] show];
         }];
         
-    }
-    else {
-        checkedIn = NO;
     }
 }
 
@@ -82,6 +93,11 @@ BOOL checkedIn = NO;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    checkedIn = NO;
+    locationManager = [[CLLocationManager alloc] init];
+    locationManager.delegate = self;
+    locationManager.distanceFilter = kCLDistanceFilterNone;
+    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     
     self.model = [KSCClassesModel sharedModel];
     
@@ -92,24 +108,30 @@ BOOL checkedIn = NO;
     
     NSArray* objects = [classQuery findObjects];
     
+    if (objects.count > 0)
+    {
+   
+    NSLog(@"SIZE OF PARSE ARRAY %d", objects.count);
+
+    for (int i = 0; i < objects.count; i++)
+    {
+        PFObject *class = [objects objectAtIndex:i];
+        NSString* className = [class objectForKey:@"name"];
+        double xLoc = [[class objectForKey:@"xlocation"] doubleValue];
+        double yLoc = [[class objectForKey:@"ylocation"] doubleValue];
+        NSString* days = [class objectForKey:@"days"];
+        NSDate* start = [class objectForKey:@"start"];
+        NSDate* end = [class objectForKey:@"end"];
+
+        [self.model insertClass: [[KSCClass alloc] initWithSectionName:className andStartTime:start andxLoc:xLoc andyLoc:yLoc andEndTime:end andDays:days] atIndex:i];
+    }
     
-            NSLog(@"SIZE OF PARSE ARRAY %d", objects.count);
-            for (int i = 0; i < objects.count; i++)
-            {
-                
-                PFObject *class = [objects objectAtIndex:i];
-                NSString* className = [class objectForKey:@"name"];
-                double xLoc = [[class objectForKey:@"xlocation"] doubleValue];
-                double yLoc = [[class objectForKey:@"ylocation"] doubleValue];
-                NSString* days = [class objectForKey:@"days"];
-                NSDate* start = [class objectForKey:@"start"];
-                NSDate* end = [class objectForKey:@"end"];
-
-                 [self.model insertClass: [[KSCClass alloc] initWithSectionName:className andStartTime:start andxLoc:xLoc andyLoc:yLoc andEndTime:end andDays:days] atIndex:i];
-
-                
-            }
-     
+    int total = [self.model numberOfClasses];
+    if (objects.count >1) {
+        for (int i = (total-objects.count); i<total; i++) {
+            [self.model removeClassAtIndex:i];
+        }
+    }
     
     
   
@@ -121,12 +143,7 @@ BOOL checkedIn = NO;
     [myFormatter setDateFormat:@"EEEE"]; // day, like "Saturday"
     [myFormatter setDateFormat:@"c"]; // day number, like 7 for saturday
     NSString *dayOfWeek = [myFormatter stringFromDate:today];
-    //NSLog(@"Today is: %@", dayOfWeek);
-    
-    
-    
-    
-    //NSString * firstLetter = [_model. substringToIndex:1];
+
     
     for (int i = 0; i < _model.numberOfClasses; i++) {
         if ([_model classAtIndex:i]) {
@@ -137,24 +154,19 @@ BOOL checkedIn = NO;
             NSString* fifthDay = [[_model classAtIndex:i].daysOfClass substringWithRange:NSMakeRange(4, 1)];
             
             if ([dayOfWeek isEqualToString:@"2"] && [firstDay isEqualToString:@"1"]) {
-                NSLog(@"Monday Class");
                 [_todaysClasses addObject:[_model classAtIndex:i]];
                 
                            }
             else if ([dayOfWeek isEqualToString:@"3"] && [secondDay isEqualToString:@"1"]) {
-                NSLog(@"Tuesday Class");
                 [_todaysClasses insertObject:[_model classAtIndex:i] atIndex:[_todaysClasses count]];
             }
             else if ([dayOfWeek isEqualToString:@"4"] && [thirdDay isEqualToString:@"1"]) {
-                NSLog(@"Wednesday Class");
                 [_todaysClasses insertObject:[_model classAtIndex:i] atIndex:[_todaysClasses count]];
             }
             else if ([dayOfWeek isEqualToString:@"5"] && [fourthDay isEqualToString:@"1"]) {
-                NSLog(@"Thursday Class");
                 [_todaysClasses insertObject:[_model classAtIndex:i] atIndex:[_todaysClasses count]];
             }
             else if ([dayOfWeek isEqualToString:@"6"] && [fifthDay isEqualToString:@"1"]) {
-                NSLog(@"Friday Class");
                 [_todaysClasses insertObject:[_model classAtIndex:i] atIndex:[_todaysClasses count]];
             }
 
@@ -181,6 +193,7 @@ BOOL checkedIn = NO;
     
     NSRunLoop *runner = [NSRunLoop currentRunLoop];
     [runner addTimer:timer forMode: NSDefaultRunLoopMode];
+    }
 
 }
 
@@ -247,13 +260,15 @@ BOOL checkedIn = NO;
 
 - (IBAction)checkButtonPressed:(id)sender {
     
-    CLLocationCoordinate2D coordinate = [self getLocation];
+    [locationManager startUpdatingLocation];
 
-    double currentX = coordinate.latitude;
+
+    /*double currentX = coordinate.latitude;
     double currentY = coordinate.longitude;
+    NSLog(@"%f %f", currentX, currentY);
     double classXLocation = [[_todaysClasses objectAtIndex:0] xLocation];
     double classYLocation = [[_todaysClasses objectAtIndex:0] yLocation];
-    if ((abs(currentX-classXLocation) < .0002) && (abs(currentY-classYLocation))) {
+    if ((abs(currentX-classXLocation) < 2) && (abs(currentY-classYLocation) < 2)) {
         checkedIn = YES;
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Checked In!"
                                                     message:@"Congrats on not being a Sloth"
@@ -272,23 +287,56 @@ BOOL checkedIn = NO;
                                               otherButtonTitles:nil];
         [alert show];
         
+    }*/
+
+}
+
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
+{
+    
+    
+    double currentX = newLocation.coordinate.latitude;
+    double currentY = newLocation.coordinate.longitude;
+    NSLog(@"%f %f", currentX, currentY);
+    double classXLocation = [[_todaysClasses objectAtIndex:0] xLocation];
+    double classYLocation = [[_todaysClasses objectAtIndex:0] yLocation];
+    if ((abs(currentX-classXLocation) < 2) && (abs(currentY-classYLocation) < 2)) {
+        checkedIn = YES;
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Checked In!"
+                                                        message:@"Congrats on not being a Sloth"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+        [locationManager stopUpdatingLocation];
+        
+        if (_todaysClasses.count > 0) {
+            PFQuery *classQuery = [PFQuery queryWithClassName:@"Class"];
+            [classQuery whereKey:@"user" equalTo:[PFUser currentUser]];
+            //NSArray* objects = [classQuery findObjects];
+            
+            PFQuery *missedClassQuery = [PFQuery queryWithClassName:@"Class"];
+            [missedClassQuery whereKey:@"name" equalTo:[[_todaysClasses objectAtIndex:0] sectionName]];
+            
+            PFQuery *mainQuery = [PFQuery orQueryWithSubqueries:@[classQuery,missedClassQuery]];
+            PFObject* object = [mainQuery getFirstObject];
+            [object deleteInBackground];
+            [_todaysClasses removeObjectAtIndex:0];
+        }
+        [_todaysClassesTable reloadData];
+    }
+    else {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"LOL"
+                                                        message:@"Nice try. Get to Class!"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+        [locationManager stopUpdatingLocation];
     }
 
 }
-
-
--(CLLocationCoordinate2D) getLocation{
-    CLLocationManager *locationManager = [[CLLocationManager alloc] init];
-    locationManager.delegate = self;
-    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-    locationManager.distanceFilter = kCLDistanceFilterNone;
-    [locationManager startUpdatingLocation];
-    CLLocation *location = [locationManager location];
-    CLLocationCoordinate2D coordinate = [location coordinate];
-    
-    return coordinate;
-}
-
 
 
 

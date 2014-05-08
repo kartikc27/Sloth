@@ -13,3 +13,6 @@
 @interface KSCHomeViewController : UIViewController <UITableViewDelegate, CLLocationManagerDelegate>
 
 @end
+
+CLLocationManager *locationManager;
+

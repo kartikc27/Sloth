@@ -143,7 +143,6 @@ double yLoc;
             return 200;
         } else {
             return 0;
-            NSLog (@"TESTING");
         }
     }
     else {
@@ -298,13 +297,6 @@ double yLoc;
     xLoc = [KSCMapViewController coordinateOfAnnotation].latitude;
     yLoc = [KSCMapViewController coordinateOfAnnotation].longitude;
     
-    
-    NSLog (@"%@", className);
-    NSLog (@"%@", days);
-    NSLog (@"%@", startTime);
-    NSLog (@"%@", endTime);
-    NSLog (@"%f", xLoc);
-    NSLog (@"%f", yLoc);
     
     if ((className.length == 0) || ([startTime isEqual:endTime]) || (xLoc == 0) || (yLoc == 0) || ([days isEqual:@"00000"])) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error!"
