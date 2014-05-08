@@ -29,6 +29,10 @@
 		53CD0662191B6F7D00EEE144 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 53CD0660191B6F7D00EEE144 /* Icon@2x.png */; };
 		53CD0663191B6F7D00EEE144 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 53CD0661191B6F7D00EEE144 /* Icon.png */; };
 		53CD0666191B75FF00EEE144 /* KSCStatisticsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53CD0665191B75FF00EEE144 /* KSCStatisticsViewController.m */; };
+		53E12391191BF2500020DF05 /* login-button-small-pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 53E1238D191BF2500020DF05 /* login-button-small-pressed.png */; };
+		53E12392191BF2500020DF05 /* login-button-small-pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 53E1238E191BF2500020DF05 /* login-button-small-pressed@2x.png */; };
+		53E12393191BF2500020DF05 /* login-button-small.png in Resources */ = {isa = PBXBuildFile; fileRef = 53E1238F191BF2500020DF05 /* login-button-small.png */; };
+		53E12394191BF2500020DF05 /* login-button-small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 53E12390191BF2500020DF05 /* login-button-small@2x.png */; };
 		53E4FBC419164E8D00CA9971 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53E4FBC319164E8D00CA9971 /* MapKit.framework */; };
 		53E4FBC619164E9600CA9971 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53E4FBC519164E9600CA9971 /* CoreLocation.framework */; };
 		53E4FBC91916DD8300CA9971 /* KSCMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E4FBC81916DD8300CA9971 /* KSCMapViewController.m */; };
@@ -90,6 +94,10 @@
 		53CD0661191B6F7D00EEE144 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		53CD0664191B75FF00EEE144 /* KSCStatisticsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSCStatisticsViewController.h; sourceTree = "<group>"; };
 		53CD0665191B75FF00EEE144 /* KSCStatisticsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSCStatisticsViewController.m; sourceTree = "<group>"; };
+		53E1238D191BF2500020DF05 /* login-button-small-pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login-button-small-pressed.png"; sourceTree = "<group>"; };
+		53E1238E191BF2500020DF05 /* login-button-small-pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login-button-small-pressed@2x.png"; sourceTree = "<group>"; };
+		53E1238F191BF2500020DF05 /* login-button-small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login-button-small.png"; sourceTree = "<group>"; };
+		53E12390191BF2500020DF05 /* login-button-small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login-button-small@2x.png"; sourceTree = "<group>"; };
 		53E4FBC319164E8D00CA9971 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		53E4FBC519164E9600CA9971 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		53E4FBC71916DD8300CA9971 /* KSCMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSCMapViewController.h; sourceTree = "<group>"; };
@@ -229,6 +237,10 @@
 		53BDD7F11912F1EB00E12BC1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				53E1238D191BF2500020DF05 /* login-button-small-pressed.png */,
+				53E1238E191BF2500020DF05 /* login-button-small-pressed@2x.png */,
+				53E1238F191BF2500020DF05 /* login-button-small.png */,
+				53E12390191BF2500020DF05 /* login-button-small@2x.png */,
 				53CD0660191B6F7D00EEE144 /* Icon@2x.png */,
 				53CD0661191B6F7D00EEE144 /* Icon.png */,
 				53BDD7F21912F1EB00E12BC1 /* Sloth2.0-Info.plist */,
@@ -338,9 +350,13 @@
 				53CD0662191B6F7D00EEE144 /* Icon@2x.png in Resources */,
 				53BDD8031912F1EB00E12BC1 /* Images.xcassets in Resources */,
 				53CD065F191B50EF00EEE144 /* itp.gpx in Resources */,
+				53E12391191BF2500020DF05 /* login-button-small-pressed.png in Resources */,
 				53BDD7F51912F1EB00E12BC1 /* InfoPlist.strings in Resources */,
 				53CD0663191B6F7D00EEE144 /* Icon.png in Resources */,
+				53E12392191BF2500020DF05 /* login-button-small-pressed@2x.png in Resources */,
+				53E12394191BF2500020DF05 /* login-button-small@2x.png in Resources */,
 				53BDD7FE1912F1EB00E12BC1 /* Main.storyboard in Resources */,
+				53E12393191BF2500020DF05 /* login-button-small.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
