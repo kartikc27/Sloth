@@ -28,6 +28,7 @@
 		53CD065F191B50EF00EEE144 /* itp.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 53CD065E191B50EF00EEE144 /* itp.gpx */; };
 		53CD0662191B6F7D00EEE144 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 53CD0660191B6F7D00EEE144 /* Icon@2x.png */; };
 		53CD0663191B6F7D00EEE144 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 53CD0661191B6F7D00EEE144 /* Icon.png */; };
+		53CD0666191B75FF00EEE144 /* KSCStatisticsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53CD0665191B75FF00EEE144 /* KSCStatisticsViewController.m */; };
 		53E4FBC419164E8D00CA9971 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53E4FBC319164E8D00CA9971 /* MapKit.framework */; };
 		53E4FBC619164E9600CA9971 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53E4FBC519164E9600CA9971 /* CoreLocation.framework */; };
 		53E4FBC91916DD8300CA9971 /* KSCMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E4FBC81916DD8300CA9971 /* KSCMapViewController.m */; };
@@ -87,6 +88,8 @@
 		53CD065E191B50EF00EEE144 /* itp.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = itp.gpx; sourceTree = "<group>"; };
 		53CD0660191B6F7D00EEE144 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		53CD0661191B6F7D00EEE144 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		53CD0664191B75FF00EEE144 /* KSCStatisticsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSCStatisticsViewController.h; sourceTree = "<group>"; };
+		53CD0665191B75FF00EEE144 /* KSCStatisticsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSCStatisticsViewController.m; sourceTree = "<group>"; };
 		53E4FBC319164E8D00CA9971 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		53E4FBC519164E9600CA9971 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		53E4FBC71916DD8300CA9971 /* KSCMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSCMapViewController.h; sourceTree = "<group>"; };
@@ -207,6 +210,8 @@
 				53E4FBC81916DD8300CA9971 /* KSCMapViewController.m */,
 				53E4FBCA1917743A00CA9971 /* KSCHomeViewController.h */,
 				53E4FBCB1917743A00CA9971 /* KSCHomeViewController.m */,
+				53CD0664191B75FF00EEE144 /* KSCStatisticsViewController.h */,
+				53CD0665191B75FF00EEE144 /* KSCStatisticsViewController.m */,
 				53E4FBD21919CA7500CA9971 /* KSCLoginViewController.h */,
 				53E4FBD31919CA7500CA9971 /* KSCLoginViewController.m */,
 				53BDD7F91912F1EB00E12BC1 /* KSCAppDelegate.h */,
@@ -361,6 +366,7 @@
 				53E4FBD41919CA7500CA9971 /* KSCLoginViewController.m in Sources */,
 				53BDD82A1914E3F100E12BC1 /* KSCClass.m in Sources */,
 				53BDD833191628CF00E12BC1 /* KSCInputClassesTableViewController.m in Sources */,
+				53CD0666191B75FF00EEE144 /* KSCStatisticsViewController.m in Sources */,
 				53BDD82D1915AB1000E12BC1 /* KSCClassesModel.m in Sources */,
 				53BDD7F71912F1EB00E12BC1 /* main.m in Sources */,
 				53E4FBC91916DD8300CA9971 /* KSCMapViewController.m in Sources */,

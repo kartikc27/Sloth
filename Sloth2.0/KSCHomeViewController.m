@@ -7,6 +7,7 @@
 //
 
 #import "KSCHomeViewController.h"
+#import "KSCStatisticsViewController.h"
 #import "KSCClassesModel.h"
 #import "Parse/Parse.h"
 
@@ -41,6 +42,7 @@ BOOL checkedIn = NO;
     if (checkedIn == NO) {
         absences++;
         NSLog(@"ABSENCES: %d", absences);
+        [[PFUser currentUser] setObject:[NSNumber numberWithInteger:absences] forKey:@"allowedAbsences"];
         
         PFQuery *classQuery = [PFQuery queryWithClassName:@"Class"];
         [classQuery whereKey:@"user" equalTo:[PFUser currentUser]];
@@ -341,15 +343,17 @@ BOOL checkedIn = NO;
 
 
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    KSCStatisticsViewController*  viewController =  [segue destinationViewController];
+    //viewController.title = @"TESTING";
+    [viewController setAbsences:absences];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
-*/
+
 
 @end
