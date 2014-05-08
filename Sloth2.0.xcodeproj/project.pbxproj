@@ -26,6 +26,8 @@
 		53BDD82D1915AB1000E12BC1 /* KSCClassesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 53BDD82C1915AB1000E12BC1 /* KSCClassesModel.m */; };
 		53BDD833191628CF00E12BC1 /* KSCInputClassesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53BDD832191628CF00E12BC1 /* KSCInputClassesTableViewController.m */; };
 		53CD065F191B50EF00EEE144 /* itp.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 53CD065E191B50EF00EEE144 /* itp.gpx */; };
+		53CD0662191B6F7D00EEE144 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 53CD0660191B6F7D00EEE144 /* Icon@2x.png */; };
+		53CD0663191B6F7D00EEE144 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 53CD0661191B6F7D00EEE144 /* Icon.png */; };
 		53E4FBC419164E8D00CA9971 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53E4FBC319164E8D00CA9971 /* MapKit.framework */; };
 		53E4FBC619164E9600CA9971 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53E4FBC519164E9600CA9971 /* CoreLocation.framework */; };
 		53E4FBC91916DD8300CA9971 /* KSCMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E4FBC81916DD8300CA9971 /* KSCMapViewController.m */; };
@@ -83,6 +85,8 @@
 		53BDD82C1915AB1000E12BC1 /* KSCClassesModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KSCClassesModel.m; sourceTree = "<group>"; };
 		53BDD832191628CF00E12BC1 /* KSCInputClassesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KSCInputClassesTableViewController.m; path = Sloth2.0/KSCInputClassesTableViewController.m; sourceTree = SOURCE_ROOT; };
 		53CD065E191B50EF00EEE144 /* itp.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = itp.gpx; sourceTree = "<group>"; };
+		53CD0660191B6F7D00EEE144 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		53CD0661191B6F7D00EEE144 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		53E4FBC319164E8D00CA9971 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		53E4FBC519164E9600CA9971 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		53E4FBC71916DD8300CA9971 /* KSCMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KSCMapViewController.h; sourceTree = "<group>"; };
@@ -220,6 +224,8 @@
 		53BDD7F11912F1EB00E12BC1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				53CD0660191B6F7D00EEE144 /* Icon@2x.png */,
+				53CD0661191B6F7D00EEE144 /* Icon.png */,
 				53BDD7F21912F1EB00E12BC1 /* Sloth2.0-Info.plist */,
 				53BDD7F31912F1EB00E12BC1 /* InfoPlist.strings */,
 				53BDD7F61912F1EB00E12BC1 /* main.m */,
@@ -324,9 +330,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				53E4FBEA191A292C00CA9971 /* KSCLoginViewController.xib in Resources */,
+				53CD0662191B6F7D00EEE144 /* Icon@2x.png in Resources */,
 				53BDD8031912F1EB00E12BC1 /* Images.xcassets in Resources */,
 				53CD065F191B50EF00EEE144 /* itp.gpx in Resources */,
 				53BDD7F51912F1EB00E12BC1 /* InfoPlist.strings in Resources */,
+				53CD0663191B6F7D00EEE144 /* Icon.png in Resources */,
 				53BDD7FE1912F1EB00E12BC1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
