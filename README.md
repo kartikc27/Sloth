@@ -25,5 +25,5 @@ Sloth
 2. Backend scripts that execute consequences (currently it is done using a timer on the application itself)
 3. Cancel button
 
-
+## Started at https://github.com/lavingiasa/LAHacks
 
